@@ -1,0 +1,173 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+
+    "entity.oberon.bombard": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/bombard",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.music": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/music/start",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.asteroid.music": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/music/asteroid",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.asteroid.siren": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/siren",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.claw": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/claw",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.bite": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/bite",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.uppercut": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/uppercut",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.clap": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/clap",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.claw_attack": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/claw_attack",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.death": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/death",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.pre_super_smash": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/pre_super_smash",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.smashing": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/smashing",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.spawn": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/spawn",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.spin": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/spin",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.step": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/step1",
+          "load_on_low_memory": true
+        },
+        {
+          "name": "sounds/entity/oberon/step2",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.super_smash": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/super_smash",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.swing": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/swing",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.claw_attack": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/entity/oberon/claw_attack",
+          "load_on_low_memory": true
+        }
+      ]
+    }
+
+  }
+}

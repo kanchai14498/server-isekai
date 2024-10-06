@@ -1,0 +1,28 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:redstone_staff"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			" XZ",
+			" YX",
+			"X  "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:copper_ingot"
+			},
+			"Y": {
+				"item": "minecraft:stick"
+			},
+			"Z": {
+				"item": "minecraft:redstone"
+			}
+		},
+		"result": {
+			"item": "amw:redstone_staff"
+		}
+	}
+}

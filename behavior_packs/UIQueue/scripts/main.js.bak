@@ -1,0 +1,54 @@
+import { world, system } from "@minecraft/server";
+
+let ui_queue = {};
+let start_queue = false;
+var ui_now = {};
+
+system.afterEvents.scriptEventReceive.subscribe( s => {
+	let id = s.sourceEntity.id;
+	if(!ui_queue[id]){
+		ui_queue[id] = {};
+		ui_now[id] = {};
+	}
+	
+	if(ui_now[id][s.id.split(":")[1]] == s.message){
+		return;
+	}else{
+		ui_now[id][s.id.split(":")[1]] = s.message;
+	}
+	ui_queue[id][s.id.split(":")[1]] = s.message;
+}, { namespaces: [ "ui_load" ]});
+
+
+system.afterEvents.scriptEventReceive.subscribe( s => {
+	if(s.id != "ui:set") return;
+	let id = s.sourceEntity.id;
+	if(!ui_queue[id]){
+		ui_queue[id] = {};
+		ui_now[id] = {};
+	}
+	
+	if(ui_now[id][s.message.split(" ")[1]] == s.message){
+		return;
+	}else{
+		ui_now[id][s.message.split(" ")[1]] = s.message;
+	}
+	ui_queue[id][s.message.split(" ")[1]] = s.message.replace(" ", "");
+}, { namespaces: [ "ui" ]});
+
+system.runInterval(() => {
+	for(let playerData of world.getPlayers()){
+//		console.warn(JSON.stringify(ui_queue))
+		if(!start_queue){
+			start_queue = true;
+			return;
+		}
+		
+		if(!ui_queue[playerData.id]) continue;
+		let keys = Object.keys(ui_queue[playerData.id]);
+		if(keys.length == 0) continue;
+		let set_ui = keys[0];
+		playerData.onScreenDisplay.setTitle(ui_queue[playerData.id][set_ui], {fadeInDuration : 1, fadeOutDuration : 1, stayDuration : 1});
+		delete ui_queue[playerData.id][set_ui];
+	}
+});

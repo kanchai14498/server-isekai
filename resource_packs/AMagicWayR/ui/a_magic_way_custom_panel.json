@@ -1,0 +1,32 @@
+{
+    "namespace": "a_magic_way_custom_panel",
+  
+    "long_form_replacement": {
+        "type": "panel",
+        "size": [0, 0],
+        "controls": [
+            {
+                "magic_learning_station_table@magic_learning_station.magic_learning_station_content": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#title_text = 'magic_learning_station.menu')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "fast_swap_scroll_concent@fast_swap_scroll_screen.fast_swap_scroll_content": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#title_text = 'fast_swap_scroll.menu')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

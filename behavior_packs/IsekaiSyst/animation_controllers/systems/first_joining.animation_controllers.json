@@ -1,0 +1,19 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.systems_first_joining": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"joined": "query.scoreboard('isekai:new_player') == 0"}
+					],
+					"blend_via_shortest_path": true
+				},
+				"joined": {
+					"on_entry": ["/function systems/first_joining"],
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+replaceitem entity @s[tag=!cant_use_fighting_spirit] slot.hotbar 8 isekai:soul_manipulation 1 0 {"keep_on_death": {}, "item_lock": {"mode": "lock_in_slot"}}

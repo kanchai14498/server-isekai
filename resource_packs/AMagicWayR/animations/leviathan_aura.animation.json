@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.leviathan_aura.move": {
+			"loop": true,
+			"blend_weight": "0.4",
+			"bones": {
+				"root": {
+					"position": [0, "math.sin(query.anim_time *360 + 150) * 6", 0]
+				},
+				"body": {
+					"rotation": ["math.sin(query.anim_time *360)*30", 0, 0]
+				},
+				"neck": {
+					"rotation": ["math.sin(query.anim_time *360 + 60)*30", 0, 0]
+				},
+				"head": {
+					"rotation": ["math.sin(query.anim_time *360 + 120)*30", 0, 0]
+				},
+				"mouth": {
+					"rotation": ["math.min(query.anim_time * 25, 30) + math.sin(query.anim_time *360 + 170) * 2", 0, 0]
+				}
+			}
+		}
+	}
+}

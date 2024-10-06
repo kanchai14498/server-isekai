@@ -1,0 +1,47 @@
+{
+  "namespace": "server_form",
+
+  "main_screen_content": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": [
+					{
+            "server_form_factory": {
+              "type": "factory",
+              "control_ids": {
+                "long_form": "@a_magic_way_custom_panel.long_form_replacement"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "long_form": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "insert_front",
+        "value": [
+          {
+            "binding_type": "view",
+            "source_control_name": "inside_header_panel",
+            "source_property_name": "#stored_text",
+            "target_property_name": "#visible"
+          }
+        ]
+      }
+    ]
+  },
+  "long_form_panel": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "((#form_text - 'menu.invisible') = #form_text)",
+        "target_property_name": "#stored_text"
+      }
+    ]
+  }
+}

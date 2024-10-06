@@ -1,0 +1,1 @@
+scriptevent amw:command get_all_spell

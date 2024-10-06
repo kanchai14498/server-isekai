@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:ice_shard",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/magic/ice_shard"
+			},
+			"geometry": {
+				"default": "geometry.ice_shard"
+			},
+			"scripts": {
+				"animate": [
+                    "setup",
+					"move"
+				]
+			},
+			"particle_effects": {
+			  "snow_magic_effect": "magic:snow_magic_effect"
+			},
+			"animations": {
+				"setup": "animation.ice_shard.setup",
+				"move": "animation.projectile.move"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bubble_trap.loop": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"scale": ["math.sin(query.anim_time*160)*0.2+1.4", "math.cos(query.anim_time*190+40)*0.2+1.4", "math.sin(query.anim_time*210+80)*0.2+1.4"]
+				}
+			}
+		}
+	}
+}

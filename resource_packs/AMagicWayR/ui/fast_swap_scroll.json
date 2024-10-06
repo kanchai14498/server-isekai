@@ -1,0 +1,1081 @@
+{
+    "namespace": "fast_swap_scroll_screen",
+
+    "fast_swap_scroll_content": {
+        "type": "panel",
+        "size": [ "100%", "100%" ],
+        "controls": [
+            {
+
+                "emote_wheel_touch_zone": {
+                    "type": "button",
+                    "size": [ 4096, 4096 ],
+                    "button_mappings": [
+                      {
+                        "from_button_id": "button.menu_select",
+                        "to_button_id": "button.menu_exit",
+                        "mapping_type": "global"
+                      }
+                    ],
+                    "alpha": 0
+                }
+            },
+            {
+				"background": {
+					"type": "image",
+					"texture": "textures/ui/spell_wheel/change_slot_wheel",
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"alpha": 0.9,
+                    "size": [ 256, 256 ],
+                    "bindings": [
+                        {
+                            "binding_name": "(not #is_using_gamepad)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+				}
+			},
+            {
+				"scroll_sort@fast_swap_scroll_screen.scroll_sort": {}
+			},
+            {
+				"gamepad_scroll_panel@fast_swap_scroll_screen.gamepad_scroll_panel": {}
+			}
+            
+        ]
+    },
+
+    "gamepad_scroll_panel": {
+        "type": "stack_panel",
+        "size": [ "100%c", 130 ],
+        "orientation": "horizontal",
+        "controls": [
+            {
+				"gamepad_scroll_sort@fast_swap_scroll_screen.gamepad_scroll_sort": {}
+			},
+            {
+                "left_control@fast_swap_scroll_screen.scroll_small_background": {}
+            },
+            {
+                "center_control": {
+                    "type": "panel",
+                    "size": [ 60, 130 ],
+                    "bindings": [
+                        {
+                            "binding_name": "(#form_button_length > 4)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right_control@fast_swap_scroll_screen.scroll_small_background": {
+                    "bindings": [
+                        {
+                            "binding_name": "(#form_button_length > 4)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#is_using_gamepad)",
+                "binding_name_override": "#visible"
+            }
+        ]
+    },
+
+    "scroll_small_background": {
+        "type": "panel",
+        "size": [ 130, 130 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/spell_wheel/change_slot_wheel_small",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "alpha": 0.9,
+                    "size": [ 128, 128 ]
+                }
+            }
+        ]
+    },
+
+    "gamepad_scroll_sort": {
+        "type": "stack_panel",
+        "size": [ 0, 0 ],
+        "$label_control": "fast_swap_scroll_screen.scroll_name_controller",
+        "$helper_control": "fast_swap_scroll_screen.gamepad_helper",
+        
+        "factory":{
+            "name": "buttons",
+            "control_name": "fast_swap_scroll_screen.gamepad_stacked_scroll"
+        },
+    
+        "collection_name": "form_buttons",
+        "bindings": [
+            {
+                "binding_name": "#form_button_length",
+                "binding_name_override": "#collection_length"
+            }
+        ]
+    },
+
+    "scroll_sort": {
+        "type": "stack_panel",
+        "size": [ 0, 0 ],
+        
+        "factory":{
+            "name": "buttons",
+            "control_name": "fast_swap_scroll_screen.stacked_scroll"
+        },
+    
+        "collection_name": "form_buttons",
+        "bindings": [
+            {
+                "binding_name": "(not #is_using_gamepad)",
+                "binding_name_override": "#visible"
+            },
+            {
+                "binding_name": "#form_button_length",
+                "binding_name_override": "#collection_length"
+            }
+        ]
+    },
+
+    "gamepad_stacked_scroll": {
+        "type": "panel",
+        "controls": [
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_14x14_face_button_up",
+                    "$gamepad_pressed": "button.menu_up",
+					"offset": [ 65, 20 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_14x14_face_button_right",
+                    "$gamepad_pressed": "button.menu_right",
+					"offset": [ 110, 65 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 1)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_14x14_face_button_down",
+                    "$gamepad_pressed": "button.menu_down",
+					"offset": [ 65, 110 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 2)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_14x14_face_button_left",
+                    "$gamepad_pressed": "button.menu_left",
+					"offset": [ 20, 65 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 3)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_bumper_right",
+                    "$gamepad_pressed": "button.menu_tab_right",
+					"offset": [ 285, 35 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 4)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_right_trigger",
+                    "$gamepad_pressed": "button.menu_alternate_tab_right",
+					"offset": [ 285, 95 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 5)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_left_trigger",
+                    "$gamepad_pressed": "button.menu_alternate_tab_left",
+					"offset": [ 225, 95 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 6)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/generic_bumper_left",
+                    "$gamepad_pressed": "button.menu_tab_left",
+					"offset": [ 225, 35 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 7)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "textures/ui/xbox_face_button_left",
+                    "$gamepad_pressed": "button.controller_select",
+					"offset": [ 160, 130 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "stacked_scroll": {
+        "type": "panel",
+        "controls": [
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.1",
+                    "$button_pressed": "button.slot1",
+					"offset": [ 0, -92 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.2",
+                    "$button_pressed": "button.slot2",
+					"offset": [ 59, -70 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 1)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.3",
+                    "$button_pressed": "button.slot3",
+					"offset": [ 91, -16 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 2)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.4",
+                    "$button_pressed": "button.slot4",
+					"offset": [ 80, 46 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 3)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.5",
+                    "$button_pressed": "button.slot5",
+					"offset": [ 31, 86 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 4)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.6",
+                    "$button_pressed": "button.slot6",
+					"offset": [ -31, 86 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 5)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.7",
+                    "$button_pressed": "button.slot7",
+					"offset": [ -80, 46 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 6)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.8",
+                    "$button_pressed": "button.slot8",
+					"offset": [ -91, -16 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 7)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "scroll@fast_swap_scroll_screen.scroll_item": {
+                    "$keyboard_select": "keyboard.keyName.9",
+                    "$button_pressed": "button.slot9",
+					"offset": [ -59, -70 ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "spell_label": {
+        "type": "image",
+        "size": [ "100%c + 16px", "100%c + 2px" ],
+        "texture": "textures/ui/hud_tip_text_background",
+        "anchor_from": "bottom_middle",
+        "anchor_to": "top_middle",
+        "$max_size|default": "fill",
+        "alpha": 0.6,
+        "controls": [
+            {
+                "text": {
+                    "type": "label",
+                    "text": "#text",
+                    "max_size": "$max_size",
+                    "text_alignment": "center",
+                    "bindings": [
+                        {
+                            "binding_name": "#form_button_text",
+                            "binding_name_override": "#text",
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "scroll_name_single": {
+        "type": "panel",
+        "size": [ "33.33%", "33.33%" ],
+        "controls": [
+            {
+                "center_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "top_middle",
+                    "$max_size": [
+                        "64px",
+                        "default"
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "right_middle",
+                    "anchor_to": "left_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index < 5 and #collection_index > 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "left_middle",
+                    "anchor_to": "right_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index > 4)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "scroll_name_controller": {
+        "type": "panel",
+        "size": [ "33.33%", "33.33%" ],
+        "controls": [
+            {
+                "up_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "top_middle",
+                    "anchor_to": "bottom_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "center_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "top_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 2 or #collection_index = 8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "right_middle",
+                    "anchor_to": "left_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 1 or #collection_index = 4 or #collection_index = 5)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left_label@fast_swap_scroll_screen.spell_label": {
+                    "anchor_from": "left_middle",
+                    "anchor_to": "right_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 3 or #collection_index = 6 or #collection_index = 7)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "gamepad_helper_image": {
+        "type": "image",
+        "texture": "$keyboard_select",
+        "size": [ 26, 26 ],
+        "layer": 2
+    },
+
+    "gamepad_helper": {
+        "type": "panel",
+        "size": [ "5%", "5%" ],
+        "controls": [
+            {
+                "center_bottom@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "top_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "center_top@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "top_middle",
+                    "anchor_to": "bottom_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 2 or #collection_index = 8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "left_middle",
+                    "anchor_to": "right_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 1)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "right_middle",
+                    "anchor_to": "left_middle",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 3)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left_top@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "top_left",
+                    "anchor_to": "bottom_right",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 4 or #collection_index = 5)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right_top@fast_swap_scroll_screen.gamepad_helper_image": {
+                    "anchor_from": "top_right",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 6 or #collection_index = 7)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "default_helper": {
+        "type": "panel",
+        "size": [ "33.33%", "33.33%" ],
+        "controls": [
+            {
+                "center_helper": {
+                    "type": "label",
+                    "offset": [ 0, 2 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "bottom_middle",
+                    "text": "$keyboard_select",
+                    "layer": 3,
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "texture": "textures/ui/spell_wheel/button_helper",
+                                "layer": -1,
+                                "size": [
+                                    "100% + 8px",
+                                    "100% + 4px"
+                                ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "right_helper": {
+                    "type": "label",
+                    "offset": [ 2, 6 ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "bottom_right",
+                    "text": "$keyboard_select",
+                    "layer": 3,
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "texture": "textures/ui/spell_wheel/button_helper",
+                                "layer": -1,
+                                "size": [
+                                    "100% + 8px",
+                                    "100% + 4px"
+                                ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index < 5 and #collection_index > 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left_helper": {
+                    "type": "label",
+                    "offset": [ -2, 6 ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "bottom_left",
+                    "text": "$keyboard_select",
+                    "layer": 3,
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "texture": "textures/ui/spell_wheel/button_helper",
+                                "layer": -1,
+                                "size": [
+                                    "100% + 8px",
+                                    "100% + 4px"
+                                ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index > 4)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_property_name": "#keyboard_button_visible",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    "none": {
+        "type": "panel"
+    },
+
+    "scroll_item@common.button": {
+        "$label_control|default": "fast_swap_scroll_screen.scroll_name_single",
+        "$helper_control|default": "fast_swap_scroll_screen.default_helper",
+        "$pressed_button_name": "button.form_button_click",
+        "$keyboard_select|default": "",
+        "$button_pressed|default": "",
+        "$gamepad_pressed|default": "",
+        "size": [ 72, 72 ],
+        "variables": [
+            {
+                "requires": "$touch",
+                "$helper_control": "fast_swap_scroll_screen.none"
+            }
+        ],
+        "controls": [
+            {
+                "label_name@$label_control": {}
+            },
+            {
+                "helper@$helper_control": {}
+            },
+            {
+                "background": {
+                    "type": "image",
+                    "texture": "textures/ui/scroll_frame_wheel",
+                    "size": [ "33.33%", "33.33%" ]
+                }
+            },
+            {
+                "pressed": {
+                    "type": "image",
+                    "texture": "textures/ui/scroll_frame_wheel_pressed",
+                    "size": [ "33.33%", "33.33%" ]
+                }
+            },
+            {
+                "hover": {
+                    "type": "panel",
+                    "controls": [
+                        {
+                            "image": {
+                                "type": "image",
+                                "texture": "textures/ui/focus_border_white",
+                                "size": [ "27.7%", "27.7%" ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "(not #is_using_gamepad)",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ]
+                            }
+                        }   
+                    ]
+                }
+            },
+            {
+                "scroll_image": {
+                    "type": "image",
+                    "texture": "#texture",
+                    "size": [ "22.22%", "22.22%" ],
+                    "bindings":[
+                      {
+                        "binding_name": "#form_button_texture",
+                        "binding_name_override": "#texture",
+                        "binding_type": "collection",
+                        "binding_collection_name": "form_buttons"
+                      },
+                      {
+                        "binding_name": "#form_button_texture_file_system",
+                        "binding_name_override": "#texture_file_system",
+                        "binding_type": "collection",
+                        "binding_collection_name": "form_buttons"
+                      }
+                    ]
+                }
+            }
+        ],
+        "button_mappings": [
+            {
+                "from_button_id": "$button_pressed",
+                "to_button_id": "$pressed_button_name",
+                "input_mode_condition": "not_gamepad",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "$gamepad_pressed",
+                "to_button_id": "$pressed_button_name",
+                "input_mode_condition": "gamepad_and_not_gaze",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$pressed_button_name",
+                "input_mode_condition": "not_gamepad",
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "$pressed_button_name",
+                "input_mode_condition": "not_gamepad",
+                "mapping_type": "focused"
+            }
+        ]
+    }
+}

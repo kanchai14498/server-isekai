@@ -1,0 +1,27 @@
+{
+  "materials": {
+    "version": "1.0.0",
+
+    "magic_entity_additive:entity_static": {
+      "+defines": [ "COLOR_BASED", "NO_TEXTURE", "USE_EMISSIVE" ],
+      "+states": [ "Blending", "DisableDepthWrite" ],
+
+      "blendSrc": "SourceAlpha",
+      "blendDst": "One"
+    },
+    
+    "magic_entity_additive_holo:magic_entity_additive": {
+      "depthFunc": "Always"
+    },
+    
+    "magic_entity_additive_animated:magic_entity_additive": {
+      "+defines": [ "USE_UV_ANIM" ],
+      "+samplerStates": [
+        {
+          "samplerIndex": 0,
+          "textureWrap": "Repeat"
+        }
+      ]
+    }
+  }
+}

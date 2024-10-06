@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:entity_target",
+			"materials": {
+				"default": "magic_entity_additive_holo"
+			},
+			"textures": {
+				"default": "textures/entity/magic/entity_target"
+			},
+			"geometry": {
+				"default": "geometry.entity_target"
+			},
+			"scripts": {
+				"animate": [ "start" ],
+				"initialize": [
+					"variable.x_rotation = 0;",
+					"variable.y_rotation = 0;",
+					"variable.select_source = -1;",
+					"variable.tick = 0;",
+					"variable.is_floor = query.property('amw:is_floor');"
+				],
+				"pre_animation": [
+					"(query.property('amw:camera_distance') != -1 && variable.select_source == -1) ? {
+						variable.select_source = 0;
+						(query.distance_from_camera < 1 || math.abs(query.distance_from_camera - (query.property('amw:camera_distance') / 10)) < 1 || math.abs(query.distance_from_camera - (query.property('amw:camera_distance_invert') / 10)) < 1) ? {
+							variable.select_source = 1;
+						};
+					};",
+					"variable.tick = variable.tick + 1;"
+				]
+			},
+			"animations": {
+				"start": "animation.entity_target.idle"
+			},
+			"render_controllers": [{
+				"controller.render.default": "variable.select_source == 1 && variable.tick > 30"
+			}]
+		}
+	}
+}

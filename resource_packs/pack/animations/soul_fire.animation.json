@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.flame": {
+			"loop": true,
+			"start_delay": "0",
+			"loop_delay": "0",
+			"particle_effects": {
+				"0.0": {
+					"effect": "charged_flames",
+					"locator": "locator"
+				}
+			}
+		},
+		"animation.flame2": {
+			"loop": true,
+			"start_delay": "0",
+			"loop_delay": "0",
+			"particle_effects": {
+				"0.0": {
+					"effect": "charged_flames",
+					"locator": "locator2"
+				}
+			}
+		},
+		"animation.flame3": {
+			"loop": true,
+			"start_delay": "0",
+			"loop_delay": "0",
+			"particle_effects": {
+				"0.0": {
+					"effect": "charged_flames",
+					"locator": "locator3"
+				}
+			}
+		}
+	}
+}

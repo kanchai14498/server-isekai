@@ -1,0 +1,430 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.item_shape_bow",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "bow",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_elytra",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "elytra",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_sword",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_crossbow",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "crossbow",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_shield",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "shield",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_shovel",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "shovel",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_axe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "axe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_pickaxe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "pickaxe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_axe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "axe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_pickaxe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "pickaxe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_axe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "axe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_pickaxe",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "pickaxe",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_leggings",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "leggings",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_chestplate",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "chestplate",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_boots",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "boots",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_helmet",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "helmet",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.item_shape_trident",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"rotation": [-75, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "trident",
+							"position": [0, -5, -8],
+							"rotation": [-15, 0, 0],
+							"local_pivot": [6.5, -2, 6]
+						}
+					]
+				}
+			]
+		}
+	]
+}

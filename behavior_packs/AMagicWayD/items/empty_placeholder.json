@@ -1,0 +1,17 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:item": {
+		"description": {
+			"identifier": "amw:empty_placeholder",
+			"menu_category": { 
+			  	"category": "none"
+			} 
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "empty"
+			},
+            "minecraft:max_stack_size":  1
+		}
+	}
+}

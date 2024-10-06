@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:soul_fragment",
+			"materials": {
+				"default": "magic_entity_additive"
+			},
+			"textures": {
+				"default": "textures/entity/magic/soul_fragment"
+			},
+			"geometry": {
+				"default": "geometry.soul_fragment"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"animations": {
+				"look": "animation.soul_fragment.look",
+				"default": "controller.animation.soul_fragment.default"
+			},
+			"particle_effects": {
+				"soul_trails": "magic:soul_trails"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

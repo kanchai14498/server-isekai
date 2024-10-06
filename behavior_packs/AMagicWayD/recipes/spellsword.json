@@ -1,0 +1,31 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:spellsword"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			"  W",
+			"XZ ",
+			"YX "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Y": {
+				"item": "minecraft:stick"
+			},
+			"Z": {
+				"item": "minecraft:amethyst_shard"
+			},
+			"W": {
+				"item": "minecraft:iron_ingot"
+			}
+		},
+		"result": {
+			"item": "amw:spellsword"
+		}
+	}
+}

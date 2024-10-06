@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:mjolnir",
+      "materials": {
+        "default": "entity"
+      },
+      "textures": {
+        "default": "textures/entity/magic/mjolnir"
+      },
+      "geometry": {
+        "default": "geometry.mjolnir"
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:ice_magic_essence_from_blue_ice"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:blue_ice"
+      },
+      {
+        "item": "amw:magic_essence"
+      }
+    ],
+    "result": {
+      "item": "amw:ice_magic_essence",
+      "count": 6
+    }
+  }
+}

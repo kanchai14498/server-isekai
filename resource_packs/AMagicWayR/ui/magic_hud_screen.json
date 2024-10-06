@@ -1,0 +1,1404 @@
+{
+	"namespace": "magic_hud",
+	
+	"custom_render": {
+		"type": "panel",
+		"$tiled|default": false,
+		"$clip_direction|default": "up",
+		"$fill_ratio|default": 15.0,
+		"$size|default": [ 17, 17 ],
+		"$uv_size|default": "$size",
+		"$uv|default": [ 0, 0 ],
+		"$target|default": "#roll",
+		"$container|default": "roll_stamina_data_control",
+		"$alpha|default": 1,
+		"$background|default": "textures/ui/roll/default/empty",
+		"$path|default": "textures/ui/roll/default/cooldown_",
+		"size": "$size",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"controls": [
+			{
+				"background": {
+					"type": "image",
+					"size": "$size",
+					"uv": "$uv",
+					"uv_size": "$uv_size",
+					"texture": "$background",
+					"alpha": "$alpha"
+				}
+			},
+			{
+				"image": {
+					"type": "image",
+					"size": "$size",
+					"uv": "$uv",
+					"uv_size": "$uv_size",
+					"alpha": "$alpha",
+					"texture": "$path",
+					"clip_direction": "$clip_direction",
+					"tiled": "$tiled",
+					"clip_pixelperfect": false,
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "$container",
+							"source_property_name": "(1.0 - ($target / $fill_ratio))",
+							"target_property_name": "#clip_ratio"
+						}
+					]
+				}
+			}
+		]
+    },
+
+	"magic_select_main": {
+		"$update_id": "magic_main",
+		"type": "image",
+		"texture": "#texture",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [ 16, 16 ],
+		"layer": 1,
+		"alpha": 1,
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "data_control_magic_menu_main",
+				"source_property_name": "(#stored_text - $update_id)",
+				"target_property_name": "#texture"
+			}
+		]
+	},
+
+	"magic_select_left": {
+		"$update_id": "magic_left",
+		"type": "image",
+		"texture": "#texture",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [ 16, 16 ],
+		"layer": 1,
+		"alpha": 1,
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "data_control_magic_menu_left",
+				"source_property_name": "(#stored_text - $update_id)",
+				"target_property_name": "#texture"
+			}
+		]
+	},
+	
+	"magic_select_right": {
+		"$update_id": "magic_right",
+		"type": "image",
+		"texture": "#texture",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [ 16, 16 ],
+		"layer": 1,
+		"alpha": 1,
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "data_control_magic_menu_right",
+				"source_property_name": "(#stored_text - $update_id)",
+				"target_property_name": "#texture"
+			}
+		]
+	},
+
+	"magic_cast_param": {
+		"type": "panel",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [ 22, 22 ],
+		"layer": 1,
+		"controls": [
+			{
+				"start": {
+					"type": "image",
+					"texture": "textures/ui/magic_menu/magic_cooldown_start",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_cooldown = 53)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"finish": {
+					"type": "image",
+					"texture": "textures/ui/magic_menu/magic_cooldown_finish",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_cooldown = 51)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"locked": {
+					"type": "image",
+					"texture": "textures/ui/magic_menu/locked",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_cooldown = 52)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"render@magic_hud.custom_render": {
+					"$size": [ 22, 22 ],
+					"$fill_ratio": 50.0,
+					"$clip_direction": "down",
+					"$background": "textures/ui/magic_menu/blank",
+					"$path": "textures/ui/magic_menu/magic_duration/duration_full",
+					"$container": "magic_data_control_1",
+					"$target": "#spell_cooldown",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_cooldown < 51)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			}
+		]
+	},
+
+	"magic_cast_cooldown": {
+		"type": "panel",
+		"$size": [ 21, 5 ],
+		"$fill_ratio": 99.0,
+		"$clip_direction": "left",
+		"$background": "textures/ui/magic_menu/cooldown_empty",
+		"$path": "textures/ui/magic_menu/cooldown_full",
+		"$container": "magic_data_control_1",
+		"$target": "#casting_duration",
+		"size": "$size",
+		"controls": [
+			{
+				"render_full": {
+					"size": "$size",
+					"type": "image",
+					"texture": "textures/ui/magic_menu/cooldown_complete"
+				}
+			},
+			{
+				"render@magic_hud.custom_render": {
+					"$size": [ 21, 5 ],
+					"$fill_ratio": 99.0,
+					"$clip_direction": "left",
+					"$background": "textures/ui/magic_menu/cooldown_empty",
+					"$path": "textures/ui/magic_menu/cooldown_full",
+					"$container": "magic_data_control_1",
+					"$target": "#casting_duration",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#casting_duration < 99)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "magic_data_control_1",
+				"source_property_name": "(#casting_duration > 0)",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+
+	"magic_name": {
+		"$update_id": "magic_name_update",
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"layer": 1,
+		"type": "image",
+		"size": [ "100%c + 24px", "100%c + 2px" ],
+		"texture": "textures/ui/hud_tip_text_background",
+		"alpha": 0.5,
+		"controls": [
+			{
+				"text": {
+					"type": "label",
+					"text": "#text",
+					"text_alignment": "center",
+					"font_size": "normal",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_name",
+							"source_property_name": "((#stored_text - $update_id)",
+							"target_property_name": "#text"
+						}
+					]
+				}
+			}
+		]
+	},
+
+	"magic_panel_selected": {
+		"type": "panel",
+		"size": [ 64, 24 ],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"layer": 1,
+		"controls": [
+			{
+				"magic_select_left@magic_hud.magic_select_left": {
+					"offset": [ -10, 0 ],
+					"size": [ 14, 14 ],
+					"clip_direction": "left",
+					"clip_ratio": 0.5,
+					"clip_pixelperfect": true
+				}
+			},
+			{
+				"magic_select_right@magic_hud.magic_select_right": {
+					"offset": [ 10, 0 ],
+					"size": [ 14, 14 ],
+					"clip_direction": "right",
+					"clip_ratio": 0.5,
+					"clip_pixelperfect": true
+				}
+			},
+			{
+				"magic_menu":{
+					"type": "image",
+					"texture": "textures/ui/magic_menu/selected_magic",
+					"size": [ 64, 24 ],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"layer": 1,
+					"alpha": 1,
+					"$update_left": "magic_left",
+					"$update_right": "magic_right",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_right",
+							"source_property_name": "(#stored_text - $update_right)",
+							"target_property_name": "#left_data"
+						},
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_left",
+							"source_property_name": "(#stored_text - $update_left)",
+							"target_property_name": "#right_data"
+						},
+						{
+						  "binding_type": "view",
+						  "source_property_name": "(not((#left_data = 'textures/ui/blank') and (#right_data = 'textures/ui/blank')))",
+						  "target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_menu_single":{
+					"type": "image",
+					"texture": "textures/ui/magic_menu/select_magic_single",
+					"size": [ 64, 24 ],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"layer": 1,
+					"alpha": 1,
+					"$update_left": "magic_left",
+					"$update_right": "magic_right",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_right",
+							"source_property_name": "(#stored_text - $update_right)",
+							"target_property_name": "#left_data"
+						},
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_left",
+							"source_property_name": "(#stored_text - $update_left)",
+							"target_property_name": "#right_data"
+						},
+						{
+						  "binding_type": "view",
+						  "source_property_name": "((#left_data = 'textures/ui/blank') and (#right_data = 'textures/ui/blank'))",
+						  "target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_select_main@magic_hud.magic_select_main": {}
+			},
+			{
+				"magic_cast_param@magic_hud.magic_cast_param": {}
+			},
+			{
+				"magic_cast_cooldown@magic_hud.magic_cast_cooldown": {
+					"offset": [ 0, -20 ]
+				}
+			}
+		]
+    },
+
+	"blink_cycle": {
+		"anim_type": "alpha",
+		"easing": "in_sine",
+		"next": "@magic_hud.blink_cycle_end",
+		"duration": 0.7,
+		"from": 1,
+		"to": 0.4
+	},
+
+	"blink_cycle_end": {
+		"anim_type": "alpha",
+		"easing": "in_sine",
+		"next": "@magic_hud.blink_cycle",
+		"duration": 0.4,
+		"from": 0.4,
+		"to": 1
+	},
+
+	"magic_panel_select": {
+		"type": "panel",
+		"size": [ 64, 24 ],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"layer": 1,
+		"controls": [
+			{
+				"magic_select_left@magic_hud.magic_select_left": {
+					"offset": [ -22, 0 ],
+					"size": [ 14, 14 ]
+				}
+			},
+			{
+				"magic_select_right@magic_hud.magic_select_right": {
+					"offset": [ 22, 0 ],
+					"size": [ 14, 14 ]
+				}
+			},
+			{
+				"magic_menu":{
+					"type": "image",
+					"texture": "textures/ui/magic_menu/select_magic",
+					"size": [ 64, 24 ],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"layer": 1,
+					"alpha": 1,
+					"$update_left": "magic_left",
+					"$update_right": "magic_right",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_right",
+							"source_property_name": "(#stored_text - $update_right)",
+							"target_property_name": "#left_data"
+						},
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_left",
+							"source_property_name": "(#stored_text - $update_left)",
+							"target_property_name": "#right_data"
+						},
+						{
+						  "binding_type": "view",
+						  "source_property_name": "(not((#left_data = 'textures/ui/blank') and (#right_data = 'textures/ui/blank')))",
+						  "target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_menu_single":{
+					"type": "image",
+					"texture": "textures/ui/magic_menu/select_magic_single",
+					"size": [ 64, 24 ],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"layer": 1,
+					"alpha": 1,
+					"$update_left": "magic_left",
+					"$update_right": "magic_right",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_right",
+							"source_property_name": "(#stored_text - $update_right)",
+							"target_property_name": "#left_data"
+						},
+						{
+							"binding_type": "view",
+							"source_control_name": "data_control_magic_menu_left",
+							"source_property_name": "(#stored_text - $update_left)",
+							"target_property_name": "#right_data"
+						},
+						{
+						  "binding_type": "view",
+						  "source_property_name": "((#left_data = 'textures/ui/blank') and (#right_data = 'textures/ui/blank'))",
+						  "target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_select_main@magic_hud.magic_select_main": {}
+			},
+			{
+				"magic_cast_param@magic_hud.magic_cast_param": {}
+			},
+			{
+				"magic_cast_cooldown@magic_hud.magic_cast_cooldown": {
+					"offset": [ 0, -20 ]
+				}
+			},
+			{
+				"magic_name@magic_hud.magic_name": {
+					"offset": [ 0, -22 ]
+				}
+			}
+		]
+    },
+
+	"magic_panel_none": {
+		"type": "panel",
+		"size": [ 64, 24 ],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"layer": 1
+    },
+
+	"magic_panel": {
+		"type": "panel",
+		"size": [ 64, 24 ],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"layer": 1,
+		"controls": [
+			{
+				"magic_panel_none@magic_hud.magic_panel_none": {	
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_select = 0)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_panel_select@magic_hud.magic_panel_select": {
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_select = 2)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"magic_panel_selected@magic_hud.magic_panel_selected": {
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "magic_data_control_1",
+							"source_property_name": "(#spell_select = 1)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "magic_data_control_1",
+				"source_property_name": "(#spell_wheel = 99)",
+				"target_property_name": "#visible"
+			}
+		]
+    },
+
+	"soul_panel@magic_hud.custom_render": {
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"$size": [ 16, 16 ],
+		"$fill_ratio": 99.0,
+		"$clip_direction": "down",
+		"$background": "textures/ui/soul/soul_empty",
+		"$path": "textures/ui/soul/soul_full",
+		"$container": "magic_data_control_1",
+		"$target": "#soul_capacity"
+	},
+
+	"spell_render": {
+		"type": "image",
+		"size": [ "18.75%", "18.75%" ],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"texture": "textures/ui/scroll_frame_wheel",
+		"$source_index": "spell_render_0",
+		"$update_string": "spell_render_0_update",
+		"alpha": 0.6,
+		"controls": [
+			{
+				"background": {
+					"type": "image",
+					"anchor_from": "center",
+					"texture": "#texture",
+					"anchor_to": "center",
+					"size": [ "66.667%", "66.667%" ],
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "$source_index",
+							"source_property_name": "(#stored_text - $update_string)",
+							"target_property_name": "#texture"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "$source_index",
+				"source_property_name": "(not(((#stored_text - $update_string) = 'disable') or ((#stored_text - $update_string) = '')))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+
+	"spell_slot_render": {
+		"type": "image",
+		"texture": "#texture",
+        "allow_debug_missing_texture": false,
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [ "15%", "100%x" ],
+		"layer": 2,
+		"controls": [
+			{
+				"background": {
+					"type": "image",
+					"texture": "textures/ui/spell_wheel/change_slot_wheel",
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"alpha": 0.9,
+					"size": [ "200%", "200%" ],
+					"controls": [
+						{
+							"label": {
+								"type": "image",
+								"size": [ "100%c + 24px", "100%c + 2px" ],
+								"texture": "textures/ui/hud_tip_text_background",
+								"anchor_from": "bottom_middle",
+								"anchor_to": "top_middle",
+								"offset": [ 0, 8 ],
+								"alpha": 0.5,
+								"controls": [
+									{
+										"text": {
+											"type": "label",
+											"text": "#text",
+											"bindings": [
+												{
+													"binding_type": "view",
+													"source_control_name": "spell_name_update_data",
+													"source_property_name": "(#stored_text - 'spell_name_update')",
+													"target_property_name": "#text"
+												}
+											]
+										}
+									}
+								],
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "spell_name_update_data",
+										"source_property_name": "(not(#stored_text = 'spell_name_update'))",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"spell_0@magic_hud.spell_render": {
+					// "offset": [0,-90],
+					"offset": ["0%","-75%"],
+					"$source_index": "spell_render_0",
+					"$update_string": "spell_render_0_update"
+
+				}
+			},
+			{
+				"spell_1@magic_hud.spell_render": {
+					// "offset": [57,-68],
+					"offset": ["47%","-56%"],
+					"$source_index": "spell_render_1",
+					"$update_string": "spell_render_1_update"
+
+				}
+			},
+			{
+				"spell_2@magic_hud.spell_render": {
+					// "offset": [88,-15],
+					"offset": ["73%","-12%"],
+					"$source_index": "spell_render_2",
+					"$update_string": "spell_render_2_update"
+
+				}
+			},
+			{
+				"spell_3@magic_hud.spell_render": {
+					// "offset": [77,44],
+					"offset": ["64%","36%"],
+					"$source_index": "spell_render_3",
+					"$update_string": "spell_render_3_update"
+
+				}
+			},
+			{
+				"spell_4@magic_hud.spell_render": {
+					// "offset": [30,84],
+					"offset": ["25%","70%"],
+					"$source_index": "spell_render_4",
+					"$update_string": "spell_render_4_update"
+
+				}
+			},
+			{
+				"spell_5@magic_hud.spell_render": {
+					// "offset": [-30,84],
+					"offset": ["-25%","70%"],
+					"$source_index": "spell_render_5",
+					"$update_string": "spell_render_5_update"
+
+				}
+			},
+			{
+				"spell_6@magic_hud.spell_render": {
+					// "offset": [-77,45],
+					"offset": ["-64%","36%"],
+					"$source_index": "spell_render_6",
+					"$update_string": "spell_render_6_update"
+
+				}
+			},
+			{
+				"spell_7@magic_hud.spell_render": {
+					// "offset": [-88,-15],
+					"offset": ["-73%","-12%"],
+					"$source_index": "spell_render_7",
+					"$update_string": "spell_render_7_update"
+
+				}
+			},
+			{
+				"spell_8@magic_hud.spell_render": {
+					// "offset": [-57,-68],
+					"offset": ["-47%","-56%"],
+					"$source_index": "spell_render_8",
+					"$update_string": "spell_render_8_update"
+
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "magic_data_control_1",
+				"source_property_name": "('textures/ui/spell_wheel/wand_direction_' + #spell_wheel)",
+				"target_property_name": "#texture"
+			},
+			{
+				"binding_type": "view",
+				"source_control_name": "magic_data_control_1",
+				"source_property_name": "((#spell_wheel < 99) and (not(#stored_text = '')))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+
+	"anim_effect_start": {
+		"anim_type": "alpha",
+		"easing": "in_sine",
+		"next": "@magic_hud.anim_effect_end",
+		"duration": 0.25,
+		"from": 1,
+		"to": 0.2
+	},
+
+	"anim_effect_end": {
+		"anim_type": "alpha",
+		"easing": "in_sine",
+		"next": "@magic_hud.anim_effect_start",
+		"duration": 0.25,
+		"from": 0.2,
+		"to": 1
+	},
+
+	"effect_ui_blank": {
+		"type": "panel",
+		"size": [ "19px", "19px" ],
+		"$effect_name|default": "blank",
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "custom_effect_data",
+				"source_property_name": "(not((#stored_text - $effect_name) = #stored_text))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+
+	"effect_ui_template": {
+		"type": "image",
+		"size": [ "19px", "19px" ],
+		"texture": "textures/ui/hud_mob_effect_background",
+		"$effect_texture|default": "textures/ui/blank",
+		"$effect_name|default": "blank",
+		"controls": [
+			{
+				"effect_image": {
+					"type": "image",
+					"size": [ "18px", "18px" ],
+					"texture": "$effect_texture",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "custom_effect_data",
+							"source_property_name": "((#stored_text - ($effect_name + '_low')) = #stored_text)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"effect_image_low": {
+					"type": "image",
+					"size": [ "18px", "18px" ],
+					"texture": "$effect_texture",
+					"alpha": "@magic_hud.anim_effect_start"
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "custom_effect_data",
+				"source_property_name": "(not((#stored_text - $effect_name) = #stored_text))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+
+	"custom_effect_renderer": {
+		"type": "stack_panel",
+		"orientation": "vertical",
+		"size": [ "fill", "fill" ],
+		"controls": [
+			{
+				"blank_0@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_0"
+				}
+			},
+			{
+				"blank_1@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_1"
+				}
+			},
+			{
+				"blank_2@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_2"
+				}
+			},
+			{
+				"blank_3@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_3"
+				}
+			},
+			{
+				"blank_4@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_4"
+				}
+			},
+			{
+				"blank_5@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_5"
+				}
+			},
+			{
+				"blank_6@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_6"
+				}
+			},
+			{
+				"blank_7@magic_hud.effect_ui_blank": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "blank_7"
+				}
+			},
+			{
+				"effect_0@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/alternate_damage",
+					"$effect_name": "alternate_damage"
+				}
+			},
+			{
+				"effect_1@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/bubble",
+					"$effect_name": "bubble"
+				}
+			},
+			{
+				"effect_2@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/floating",
+					"$effect_name": "floating"
+				}
+			},
+			{
+				"effect_3@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/freeze",
+					"$effect_name": "freeze"
+				}
+			},
+			{
+				"effect_4@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/heals",
+					"$effect_name": "heals"
+				}
+			},
+			{
+				"effect_5@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/magic_lasso",
+					"$effect_name": "magic_lasso"
+				}
+			},
+			{
+				"effect_6@magic_hud.effect_ui_template": {
+					"$effect_texture": "textures/ui/effect/magnetism",
+					"$effect_name": "magnetism"
+				}
+			}
+		]
+	},
+
+	"mob_effects_renderer": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": [
+					{
+						"custom_effect_renderer@magic_hud.custom_effect_renderer": {
+							"offset": [ "-21px", "-8px" ],
+							"anchor_from": "top_right",
+							"anchor_to": "top_right"
+						}
+					}
+				]
+			}
+		]
+	},
+
+    "root_panel": {
+		"type": "panel",
+        "controls": [
+            {
+                "data_control_magic": {
+                    "$update_main": "magic_main",
+                    "$update_left": "magic_left",
+                    "$update_right": "magic_right",
+                    "$update_magic_name": "magic_name_update",
+                    "$update_spell_slot_0": "spell_render_0_update",
+                    "$update_spell_slot_1": "spell_render_1_update",
+                    "$update_spell_slot_2": "spell_render_2_update",
+                    "$update_spell_slot_3": "spell_render_3_update",
+                    "$update_spell_slot_4": "spell_render_4_update",
+                    "$update_spell_slot_5": "spell_render_5_update",
+                    "$update_spell_slot_6": "spell_render_6_update",
+                    "$update_spell_slot_7": "spell_render_7_update",
+                    "$update_spell_slot_8": "spell_render_8_update",
+                    "$update_spell_name": "spell_name_update",
+                    "$custom_effect": "custom_effect_update",
+                    "$update_magic_ui": "magic_ui_update",
+                    "type": "panel",
+                    "size": [ 0, 0 ],
+                    "controls": [
+                        {
+                            "magic_data_control_1": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#show_survival_ui",
+                                        "binding_name_override": "#survival_ui"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#stored_text - ('%.1s' * #stored_text))",
+                                      "target_property_name": "#data"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "('%.1s' * #stored_text)",
+                                      "target_property_name": "#header"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#data/100000000)",
+                                      "target_property_name": "#spell_select"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#data / 1000000) - (#spell_select * 100)",
+                                      "target_property_name": "#spell_cooldown"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#data / 10000) - (#spell_cooldown * 100) - (#spell_select * 10000)",
+                                      "target_property_name": "#spell_wheel"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#data / 100) - (#spell_wheel * 100) - (#spell_cooldown * 10000) - (#spell_select * 1000000)",
+                                      "target_property_name": "#casting_duration"
+                                    },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "(#data / 1) - (#casting_duration * 100) - (#spell_wheel * 10000) - (#spell_cooldown * 1000000) - (#spell_select * 100000000)",
+                                      "target_property_name": "#soul_capacity"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_magic_ui) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "custom_effect_data": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $custom_effect) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_name_update_data": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_name) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_0": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_0) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_1": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_1) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_2": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_2) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_3": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_3) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_4": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_4) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_5": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_5) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_6": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_6) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_7": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_7) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spell_render_8": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_spell_slot_8) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "data_control_magic_menu_name": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_magic_name) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "data_control_magic_menu_main": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_main) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "data_control_magic_menu_left": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_left) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "data_control_magic_menu_right": {
+                                "type": "panel",
+                                "size": [ 0, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string"
+                                    },
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#stored_text",
+                                        "binding_condition": "visibility_changed"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#hud_title_text_string = #stored_text) and not ((#hud_title_text_string - $update_right) = #hud_title_text_string))",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "magic_panel@magic_hud.magic_panel": {
+                    "$offset": [ -165, 0 ],
+                    "type": "panel",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "variables": [
+                        {
+                            "requires": "$pocket_edition",
+                            "$offset": [ 0, -56 ]
+                        }
+                    ],
+                    "offset": "$offset"
+                }
+            },
+            {
+                "soul": {
+                    "type": "panel",
+                    "$offset": [ 98, -28 ],
+                    "size": [ 16, 16 ],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "controls": [
+                        {
+                            "denied": {
+                                "type": "image",
+                                "texture": "textures/ui/soul/soul_denied",
+                                "size": [ 16, 16 ],
+                                "layer": 2,
+                                "alpha": "@magic_hud.blink_cycle",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "magic_data_control_1",
+                                        "source_property_name": "(#header = 'b')",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "soul_panel@magic_hud.soul_panel": {}
+                        }
+                    ],
+                    "bindings": [
+                        {
+                          "binding_name": "#is_not_riding",
+                          "binding_name_override": "#visible"
+                        }
+                    ],
+                    "variables": [
+                        {
+                            "requires": "$pocket_edition",
+                            "$offset": [ 110, -28 ]
+                        }
+                    ],
+                    "offset": "$offset"
+                }
+            },
+            {
+                "spell_slot_render@magic_hud.spell_slot_render": {}
+            }
+        ]
+    }
+}

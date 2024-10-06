@@ -1,0 +1,83 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.floating_magic_book",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "book",
+					"parent": "root",
+					"pivot": [0, 3.1, 0],
+					"rotation": [-90, 180, 0],
+					"cubes": [
+						{"origin": [-1, -1.9, 0], "size": [2, 10, 0], "inflate": 0.01, "uv": [12, 0]}
+					]
+				},
+				{
+					"name": "leftCover",
+					"parent": "book",
+					"pivot": [-1, 3.1, 0],
+					"cubes": [
+						{"origin": [-7, -1.9, 0], "size": [6, 10, 0], "inflate": 0.01, "pivot": [-1, -1.9, 0], "rotation": [0, -15, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "rightCover",
+					"parent": "book",
+					"pivot": [1, 3.1, 0],
+					"cubes": [
+						{"origin": [1, -1.9, 0], "size": [6, 10, 0], "inflate": 0.01, "pivot": [1, -1.9, 0], "rotation": [0, 15, 0], "uv": [16, 0]}
+					]
+				},
+				{
+					"name": "innerBook",
+					"parent": "book",
+					"pivot": [0, 3.1, -1]
+				},
+				{
+					"name": "leftBook",
+					"parent": "innerBook",
+					"pivot": [0, 3.1, -1],
+					"cubes": [
+						{"origin": [-5, -0.9, -1], "size": [5, 8, 1], "pivot": [0, 1.1, -1], "rotation": [0, -12.5, 0], "uv": [12, 10]}
+					]
+				},
+				{
+					"name": "rightBook",
+					"parent": "innerBook",
+					"pivot": [0, 3.1, -1],
+					"cubes": [
+						{"origin": [0, -0.9, -1], "size": [5, 8, 1], "pivot": [0, 1.1, -1], "rotation": [0, 12.5, 0], "uv": [0, 10]}
+					]
+				},
+				{
+					"name": "leftPage",
+					"parent": "innerBook",
+					"pivot": [0, 3.1, -1],
+					"cubes": [
+						{"origin": [-5, -0.9, -1], "size": [5, 8, 0], "inflate": 0.001, "pivot": [0, 1.1, -1], "rotation": [0, -20, 0], "uv": [29, 10]}
+					]
+				},
+				{
+					"name": "rightPage",
+					"parent": "innerBook",
+					"pivot": [0, 3.1, -1],
+					"cubes": [
+						{"origin": [0, -0.9, -1], "size": [5, 8, 0], "inflate": 0.001, "pivot": [0, 1.1, -1], "rotation": [0, 20, 0], "uv": [24, 10]}
+					]
+				}
+			]
+		}
+	]
+}

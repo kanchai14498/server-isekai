@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.orb": {
+      "arrays": {
+        "textures": {
+          "Array.elements": [ 
+            "Texture.fire",
+            "Texture.water",
+            "Texture.void",
+            "Texture.nature",
+            "Texture.thunder",
+            "Texture.light",
+            "Texture.wind",
+            "Texture.dark",
+            "Texture.ice"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ 
+        "Array.elements[query.variant]"
+      ]
+    }
+  }
+}

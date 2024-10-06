@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:ice_chunk",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/entity/magic/ice_chunk"
+			},
+			"geometry": {
+				"default": "geometry.ice_chunk"
+			},
+			"scripts": {
+				"animate": [
+					"move",
+					"random"
+				],
+				"initialize": [
+					"variable.random_rot = Math.random_integer(0, 360);",
+					"variable.random_size = 1;"
+				]
+			},
+			"animations": {
+				"random": "animation.magic.random_rotation",
+				"start": "animation.ice_chunk.start",
+				"slam": "animation.ice_chunk.slam",
+				"idle": "animation.ice_chunk.idle",
+				"move": "controller.animation.ice_chunk.move"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:decoy_obelisk",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/entity/magic/decoy_obelisk"
+			},
+			"geometry": {
+				"default": "geometry.decoy_obelisk"
+			},
+			"scripts": {
+				"animate": [
+                    "start"
+				]
+			},
+			"animations": {
+				"start": "animation.fire_obelisk.start"
+			},
+			"particle_effects": {
+				"earth_magic_cast_impact": "magic:earth_magic_cast_impact",
+				"earth_magic_effect": "magic:earth_magic_effect"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

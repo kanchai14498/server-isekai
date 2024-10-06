@@ -1,0 +1,25 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:holy_staff"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			" X ",
+			" YX",
+			"X  "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Y": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "amw:holy_staff"
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:bubble_trap",
+            "runtime_identifier": "minecraft:shield",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			},
+			"small": {
+				"minecraft:scale":{
+					"value": 0.4
+				}
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 0
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+            "minecraft:scale":{
+                "value": 1
+            },
+            "minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			},
+			"set_small": {
+				"add": {
+					"component_groups": [ "small" ]
+				}
+			}
+		}
+	}
+}

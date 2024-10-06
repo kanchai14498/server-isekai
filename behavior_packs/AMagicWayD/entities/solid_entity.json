@@ -1,0 +1,147 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:solid_entity",
+            "runtime_identifier": "minecraft:boat",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			},
+			"h0.5": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 0.5
+				}
+			},
+			"h1": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 1
+				}
+			},
+			"h1.5": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 1.5
+				}
+			},
+			"h2": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 2
+				}
+			},
+			"h2.5": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 2.5
+				}
+			},
+			"h3": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 3
+				}
+			},
+			"h3.5": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 3.5
+				}
+			},
+			"h4": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 4
+				}
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 0
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:scale":{
+				"value": 1.0
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			},
+			"h0.5": {
+				"add": {
+					"component_groups": [ "h0.5" ]
+				}
+			},
+			"h1": {
+				"add": {
+					"component_groups": [ "h1" ]
+				}
+			},
+			"h1.5": {
+				"add": {
+					"component_groups": [ "h1.5" ]
+				}
+			},
+			"h2": {
+				"add": {
+					"component_groups": [ "h2" ]
+				}
+			},
+			"h2.5": {
+				"add": {
+					"component_groups": [ "h2.5" ]
+				}
+			},
+			"h3": {
+				"add": {
+					"component_groups": [ "h3" ]
+				}
+			},
+			"h3.5": {
+				"add": {
+					"component_groups": [ "h3.5" ]
+				}
+			},
+			"h4": {
+				"add": {
+					"component_groups": [ "h4" ]
+				}
+			}
+		}
+	}
+}

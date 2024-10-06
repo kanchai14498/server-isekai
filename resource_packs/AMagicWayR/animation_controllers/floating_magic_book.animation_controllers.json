@@ -1,0 +1,23 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.floating_magic_book.root": {
+			"states": {
+				"default": {
+					"animations": ["closed", "rotation"],
+					"transitions": [
+						{"facing": "query.distance_from_camera < 7"}
+					],
+					"blend_transition": 0.5
+				},
+				"facing": {
+					"animations": ["open", "facing"],
+					"transitions": [
+						{"default": "query.distance_from_camera >= 7"}
+					],
+					"blend_transition": 0.5
+				}
+			}
+		}
+	}
+}

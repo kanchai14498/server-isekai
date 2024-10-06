@@ -1,0 +1,235 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:magic_orb",
+            "runtime_identifier": "minecraft:snowball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			},
+			"set_fire": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"set_water": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"set_void": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"set_nature": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"set_thunder": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"set_light": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"set_wind": {
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+			"set_dark": {
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"set_ice": {
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"set_hard_orb": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"stick_in_ground": {}
+					},
+					"anchor": 1,
+					"power": 1.5,
+					"gravity": 0.03,
+					"stop_on_hurt": false
+				},
+				"minecraft:physics": {
+					"has_gravity": false,
+					"has_collision": false
+				}
+				// "minecraft:inside_block_notifier": {
+				// 	"block_list": [
+				// 		{
+				// 			"block": {
+				// 				"name": "minecraft:air"
+				// 			},
+				// 			"exited_block_event": {
+				// 				"event": "despawn",
+				// 				"target": "self"
+				// 			}
+				// 		}
+				// 	]
+				// }
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 0
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"stick_in_ground": {},
+					"definition_event": {
+						"event_trigger": {		
+							"event": "despawn"
+						}
+					}
+				},
+				"anchor": 1,
+				"power": 1.5,
+				"gravity": 0.03
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			},
+			"fire_orb": {
+				"add": {
+					"component_groups": [ "set_fire" ]
+				}
+			},
+			"water_orb": {
+				"add": {
+					"component_groups": [ "set_water" ]
+				}
+			},
+			"void_orb": {
+				"add": {
+					"component_groups": [ "set_void" ]
+				}
+			},
+			"nature_orb": {
+				"add": {
+					"component_groups": [ "set_nature" ]
+				}
+			},
+			"thunder_orb": {
+				"add": {
+					"component_groups": [ "set_thunder" ]
+				}
+			},
+			"light_orb": {
+				"add": {
+					"component_groups": [ "set_light" ]
+				}
+			},
+			"wind_orb": {
+				"add": {
+					"component_groups": [ "set_wind" ]
+				}
+			},
+			"dark_orb": {
+				"add": {
+					"component_groups": [ "set_dark" ]
+				}
+			},
+			"ice_orb": {
+				"add": {
+					"component_groups": [ "set_ice" ]
+				}
+			},
+			"hard_fire_orb": {
+				"add": {
+					"component_groups": [ "set_fire", "set_hard_orb" ]
+				}
+			},
+			"hard_water_orb": {
+				"add": {
+					"component_groups": [ "set_water", "set_hard_orb" ]
+				}
+			},
+			"hard_void_orb": {
+				"add": {
+					"component_groups": [ "set_void", "set_hard_orb" ]
+				}
+			},
+			"hard_nature_orb": {
+				"add": {
+					"component_groups": [ "set_nature", "set_hard_orb" ]
+				}
+			},
+			"hard_thunder_orb": {
+				"add": {
+					"component_groups": [ "set_thunder", "set_hard_orb" ]
+				}
+			},
+			"hard_light_orb": {
+				"add": {
+					"component_groups": [ "set_light", "set_hard_orb" ]
+				}
+			},
+			"hard_wind_orb": {
+				"add": {
+					"component_groups": [ "set_wind", "set_hard_orb" ]
+				}
+			},
+			"hard_dark_orb": {
+				"add": {
+					"component_groups": [ "set_dark", "set_hard_orb" ]
+				}
+			},
+			"hard_ice_orb": {
+				"add": {
+					"component_groups": [ "set_ice", "set_hard_orb" ]
+				}
+			}
+		}
+	}
+}

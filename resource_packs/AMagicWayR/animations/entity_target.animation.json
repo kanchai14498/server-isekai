@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.entity_target.idle": {
+			"loop": true,
+			"bones": {
+				"floor": {
+					"rotation": [0, "query.anim_time * 16", 0],
+					"scale": "(math.sin(query.anim_time * 72) * 0.1 + 1) * variable.is_floor"
+				},
+				"hover": {
+					"rotation": ["query.rotation_to_camera(0)", "query.rotation_to_camera(1)", 0]
+				},
+				"inside": {
+					"rotation": [0, 0, "query.anim_time * 16"],
+					"scale": "(math.sin(query.anim_time * 72) * 0.1 + 1) * (1-variable.is_floor)"
+				}
+			}
+		}
+	}
+}

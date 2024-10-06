@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:fire_obelisk",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/magic/fire_obelisk"
+			},
+			"geometry": {
+				"default": "geometry.fire_obelisk"
+			},
+			"scripts": {
+				"animate": [
+					"idle",
+                    "start"
+				]
+			},
+			"animations": {
+				"idle": "animation.fire_obelisk.loop",
+				"start": "animation.fire_obelisk.start"
+			},
+			"particle_effects": {
+				"earth_magic_cast_impact": "magic:earth_magic_cast_impact",
+				"earth_magic_effect": "magic:earth_magic_effect"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

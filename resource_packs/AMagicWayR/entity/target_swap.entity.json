@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:target_swap",
+      "materials": {
+        "default": "magic_entity_additive_holo"
+      },
+      "textures": {
+        "default": "textures/entity/magic/target_swap"
+      },
+      "geometry": {
+        "default": "geometry.2d_image"
+      },
+      "animations": {
+        "move": "animation.2d_image.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

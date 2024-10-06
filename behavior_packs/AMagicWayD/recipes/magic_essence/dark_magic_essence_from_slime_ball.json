@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:dark_magic_essence_from_slime_ball"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:slime_ball"
+      },
+      {
+        "item": "amw:magic_essence"
+      }
+    ],
+    "result": {
+      "item": "amw:dark_magic_essence",
+      "count": 1
+    }
+  }
+}

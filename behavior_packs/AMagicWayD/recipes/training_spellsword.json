@@ -1,0 +1,25 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:training_spellsword"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			"  X",
+			"XX ",
+			"YX "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:planks"
+			},
+			"Y": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "amw:training_spellsword"
+		}
+	}
+}

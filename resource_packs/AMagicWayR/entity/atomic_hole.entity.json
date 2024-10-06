@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:atomic_hole",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/magic/atomic_hole"
+			},
+			"geometry": {
+				"default": "geometry.atomic_hole"
+			},
+			"scripts": {
+				"animate": [
+                    "cycle"
+				]
+			},
+			"animations": {
+				"cycle": "animation.atomic_hole.cycle"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

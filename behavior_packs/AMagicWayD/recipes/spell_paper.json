@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:spell_paper"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:paper"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      },
+      {
+        "item": "minecraft:glow_ink_sac"
+      }
+    ],
+    "result": {
+      "item": "amw:spell_paper"
+    }
+  }
+}

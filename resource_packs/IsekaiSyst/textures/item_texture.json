@@ -1,0 +1,10 @@
+{
+	"texture_data": {
+		"soul_manipulation": {
+			"textures": "textures/items/soul_manipulation/soul_manipulation.png"
+		},
+		"slot_locked": {
+			"textures": "textures/items/soul_manipulation/slot_locked.png"
+		}
+	}
+}

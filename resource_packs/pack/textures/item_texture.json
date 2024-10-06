@@ -1,0 +1,17 @@
+//bridge-file-version: #10
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"raiyon:enchanted_book": {
+			"textures": [
+				"textures/items/book_raiyon"
+			]
+		},
+		"raiyon:ancient_trim": {
+			"textures": [
+				"textures/items/ancient_trim"
+			]
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.2d_image.move": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["query.rotation_to_camera(0) - query.body_x_rotation", "query.rotation_to_camera(1) - query.body_y_rotation", 0]
+				}
+			}
+		},
+		"animation.2d_image.scale": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"scale": "query.distance_from_camera / 16 * variable.size"
+				}
+			}
+		}
+	}
+}

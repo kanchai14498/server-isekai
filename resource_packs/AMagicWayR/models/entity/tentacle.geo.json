@@ -1,0 +1,45 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tentacle",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "tentacle_0",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7, 0, -3], "size": [14, 14, 6], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "tentacle_1",
+					"parent": "tentacle_0",
+					"pivot": [0, 14, 0],
+					"cubes": [
+						{"origin": [-6, 14, -3], "size": [12, 14, 5], "uv": [0, 20]}
+					]
+				},
+				{
+					"name": "tentacle_2",
+					"parent": "tentacle_1",
+					"pivot": [0, 28, 0],
+					"cubes": [
+						{"origin": [-5, 28, -3], "size": [10, 12, 4], "uv": [34, 20]}
+					]
+				}
+			]
+		}
+	]
+}

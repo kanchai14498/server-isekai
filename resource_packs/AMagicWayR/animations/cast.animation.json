@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cast.holding_cast": {
+			"animation_length": 27.5,
+			"blend_weight": "!variable.is_first_person",
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": ["-97.2776 - this * 0.7", "10.4909 - this * 0.7", "-55.8494 - this * 0.7"]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -2, -1]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [
+							"-62.9049 + math.pow(math.random(-10, 10)/10, 3) - this * 0.7",
+							"-23.3345 - this * 0.7",
+							"40.6771 + math.pow(math.random(-10, 10)/10, 3)*4 - this * 0.7"
+						]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [-1, -1, 0]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [12.5, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

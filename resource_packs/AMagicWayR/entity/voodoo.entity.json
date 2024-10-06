@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:voodoo",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/entity/magic/voodoo"
+			},
+			"geometry": {
+				"default": "geometry.voodoo"
+			},
+			"scripts": {
+				"animate": [
+                    {
+						"cycle": 0.3
+					}
+				]
+			},
+			"animations": {
+				"cycle": "animation.voodoo.cycle"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

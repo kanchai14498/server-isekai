@@ -1,0 +1,35 @@
+{
+	"resource_pack_name": "terrain",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"transparent_texture": {
+			"textures": "textures/ui/blank"
+		},
+		"spell_binding_table_top": {
+			"textures": "textures/blocks/spell_binding_table_top"
+		},
+		"spell_binding_table_side": {
+			"textures": "textures/blocks/spell_binding_table_side"
+		},
+		"magic_reinforcement_table_side": {
+			"textures": "textures/blocks/magic_reinforcement_table_side"
+		},
+		"magic_reinforcement_table_top": {
+			"textures": "textures/blocks/magic_reinforcement_table_top"
+		},
+		"magic_reinforcement_table_bottom": {
+			"textures": "textures/blocks/magic_reinforcement_table_bottom"
+		},
+		"magic_learning_station_plank": {
+			"textures": "textures/blocks/magic_learning_station_plank"
+		},
+		"magic_learning_station_cloth": {
+			"textures": "textures/blocks/magic_learning_station_cloth"
+		},
+		"spell_binding_table_with_spell": {
+			"textures": "textures/blocks/spell_binding_table_with_spell"
+		}
+	}
+}

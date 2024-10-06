@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:bubble_trap",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/magic/bubble_trap"
+			},
+			"geometry": {
+				"default": "geometry.bubble_trap"
+			},
+			"scripts": {
+				"animate": [
+                    "loop"
+				]
+			},
+			"animations": {
+				"loop": "animation.bubble_trap.loop"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:magic_thrown_trident",
+      "materials": {
+        "default": "entity"
+      },
+      "textures": {
+        "default": "textures/entity/trident"
+      },
+      "geometry": {
+        "default": "geometry.magic_trident"
+      },
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"animations": {
+				"move": "animation.projectile.move"
+			},
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

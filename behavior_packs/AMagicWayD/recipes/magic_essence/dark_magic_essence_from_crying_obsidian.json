@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:dark_magic_essence_from_crying_obsidian"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:crying_obsidian"
+      },
+      {
+        "item": "amw:magic_essence"
+      }
+    ],
+    "result": {
+      "item": "amw:dark_magic_essence",
+      "count": 7
+    }
+  }
+}

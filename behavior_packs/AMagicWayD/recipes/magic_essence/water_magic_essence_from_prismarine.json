@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:water_magic_essence_from_prismarine"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:prismarine"
+      },
+      {
+        "item": "amw:magic_essence"
+      }
+    ],
+    "result": {
+      "item": "amw:water_magic_essence",
+      "count": 6
+    }
+  }
+}

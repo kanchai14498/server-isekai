@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:aegis_aura",
+      "materials": {
+        "default": "magic_entity_additive",
+        "charged": "magic_entity_additive_animated"
+      },
+      "textures": {
+        "default": "textures/entity/magic/aegis_aura",
+        "charged": "textures/entity/creeper/creeper_armor"
+      },
+      "geometry": {
+        "default": "geometry.aegis_aura",
+        "charged": "geometry.aegis_aura_charged"
+      },
+      "animations": {
+        "cycle": "animation.aegis_aura.cycle",
+				"random": "animation.magic.random_rotation"
+      },
+      "scripts": {
+				"initialize": [
+					"variable.random_rot = Math.random_integer(0, 360);",
+					"variable.random_size = Math.random_integer(1, 2);"
+				],
+        "animate": [
+          "cycle",
+          "random"
+        ]
+      },
+      "render_controllers": [  "controller.render.creeper_armor", "controller.render.default" ]
+    }
+  }
+}

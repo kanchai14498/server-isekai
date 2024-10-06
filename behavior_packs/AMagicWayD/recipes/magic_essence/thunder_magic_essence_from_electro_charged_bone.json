@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "amw:thunder_magic_essence_from_electro_charged_bone"
+    },
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "amw:electro_charged_bone"
+      },
+      {
+        "item": "amw:magic_essence"
+      }
+    ],
+    "result": {
+      "item": "amw:thunder_magic_essence",
+      "count": 4
+    }
+  }
+}

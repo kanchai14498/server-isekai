@@ -1,0 +1,28 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:amethyst_staff"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			" XZ",
+			" YX",
+			"X  "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Y": {
+				"item": "minecraft:blaze_rod"
+			},
+			"Z": {
+				"item": "minecraft:amethyst_shard"
+			}
+		},
+		"result": {
+			"item": "amw:amethyst_staff"
+		}
+	}
+}

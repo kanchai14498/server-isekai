@@ -1,0 +1,28 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:spell_binding_table"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			" X ",
+			"YZY",
+			"ZZZ"
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:lapis_lazuli"
+			},
+			"Y": {
+				"item": "minecraft:amethyst_shard"
+			},
+			"Z": {
+				"item": "minecraft:crying_obsidian"
+			}
+		},
+		"result": {
+			"item": "amw:spell_binding_table"
+		}
+	}
+}

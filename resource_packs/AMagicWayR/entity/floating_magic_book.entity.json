@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:floating_magic_book",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/magic/floating_magic_book"
+      },
+      "geometry": {
+        "default": "geometry.floating_magic_book"
+      },
+      "animations": {
+        "closed": "animation.floating_magic_book.closed",
+        "open": "animation.floating_magic_book.open",
+        "floating": "animation.floating_magic_book.floating",
+        "facing": "animation.floating_magic_book.facing",
+        "rotation": "animation.floating_magic_book.rotation",
+        "root": "controller.animation.floating_magic_book.root"
+      },
+      "scripts": {
+        "animate": [
+          "root",
+          "floating"
+        ]
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

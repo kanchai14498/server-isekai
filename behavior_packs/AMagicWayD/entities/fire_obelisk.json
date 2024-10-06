@@ -1,0 +1,65 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:fire_obelisk",
+            "runtime_identifier": "minecraft:shield",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:behavior.float": {
+			  	"priority": 0
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			}
+		}
+	}
+}

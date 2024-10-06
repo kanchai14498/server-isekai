@@ -1,0 +1,18 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Isekai Items",
+		"description": "Isekai Items Resource Pack",
+		"uuid": "7eabe162-1d33-d981-e961-7518c98c5e6b",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"modules": [
+		{
+			"description": "Isekai-Items",
+			"type": "resources",
+			"uuid": "fd33d9f2-5cdb-ffac-30b6-07b4244c91f2",
+			"version": [1, 0, 0]
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:targeting_placeholder",
+      "materials": {
+        "default": "magic_entity_additive_holo"
+      },
+      "textures": {
+        "default": "textures/entity/magic/target"
+      },
+      "geometry": {
+        "default": "geometry.2d_image"
+      },
+      "animations": {
+        "move": "animation.2d_image.move",
+        "scale": "animation.2d_image.scale"
+      },
+      "scripts": {
+        "initialize": [
+          "variable.size = 2;"
+        ],
+        "animate": [
+          "move",
+          "scale"
+        ]
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

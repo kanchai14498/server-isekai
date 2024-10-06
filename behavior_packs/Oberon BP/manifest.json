@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Addon by AzozGamer936 \n§ahttps://mcpedl.com/oberon/",
+    "name": "Oberon Boss V1.5 [BP]",
+    "uuid": "61842b70-6913-4587-92bc-9b6e7133e631",
+    "min_engine_version": [ 1, 19, 50 ],
+    "version": [ 1, 0, 0 ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "87a91cde-45b7-4f3a-b5a1-169e13b702f8",
+      "version": [ 1, 0, 0 ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "b8893753-e0f2-43cc-8b0e-52cfb37eb04b",
+      "version": [ 1, 0, 0 ]
+    }
+  ]
+}

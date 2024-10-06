@@ -1,0 +1,28 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:lapis_lazuli_wand"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			"  Z",
+			" Y ",
+			"X  "
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:planks"
+			},
+			"Y": {
+				"item": "minecraft:stick"
+			},
+			"Z": {
+				"item": "minecraft:lapis_lazuli"
+			}
+		},
+		"result": {
+			"item": "amw:lapis_lazuli_wand"
+		}
+	}
+}

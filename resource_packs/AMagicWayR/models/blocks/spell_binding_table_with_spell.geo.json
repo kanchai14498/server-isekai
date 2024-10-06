@@ -1,0 +1,49 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.spell_binding_table_with_spell",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 13, 16],
+							"uv": {
+								"north": {"uv": [0, 19], "uv_size": [16, 13]},
+								"east": {"uv": [0, 19], "uv_size": [16, 13]},
+								"south": {"uv": [0, 19], "uv_size": [16, 13]},
+								"west": {"uv": [0, 19], "uv_size": [16, 13]},
+								"up": {"uv": [32, 35], "uv_size": [-16, -16]},
+								"down": {"uv": [16, 51], "uv_size": [-16, -16]}
+							}
+						}
+					]
+				},
+				{
+					"name": "book",
+					"pivot": [0, 13.1, 0],
+					"rotation": [-90, 180, 0],
+					"cubes": [
+						{"origin": [-7, 8.1, 0], "size": [6, 10, 0], "pivot": [-1, 8.1, 0], "rotation": [0, -15, 0], "uv": [0, 0]},
+						{"origin": [-1, 8.1, 0], "size": [2, 10, 0], "uv": [12, 0]},
+						{"origin": [1, 8.1, 0], "size": [6, 10, 0], "pivot": [1, 8.1, 0], "rotation": [0, 15, 0], "uv": [16, 0]},
+						{"origin": [0, 9.1, -1], "size": [5, 8, 1], "pivot": [0, 11.1, -1], "rotation": [0, 12.5, 0], "uv": [0, 10]},
+						{"origin": [0, 9.1, -1], "size": [5, 8, 0], "pivot": [0, 11.1, -1], "rotation": [0, 20, 0], "uv": [24, 10]},
+						{"origin": [-5, 9.1, -1], "size": [5, 8, 1], "pivot": [0, 11.1, -1], "rotation": [0, -12.5, 0], "uv": [12, 10]},
+						{"origin": [-5, 9.1, -1], "size": [5, 8, 0], "pivot": [0, 11.1, -1], "rotation": [0, -20, 0], "uv": [29, 10]}
+					]
+				}
+			]
+		}
+	]
+}

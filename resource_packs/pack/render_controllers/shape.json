@@ -1,0 +1,55 @@
+//bridge-file-version: #9
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.shape": {
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.property('raiyon:shape')]"
+			],
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.elytra",
+						"Texture.axe",
+						"Texture.pickaxe",
+						"Texture.shovel",
+						"Texture.shield",
+						"Texture.crossbow",
+						"Texture.helmet",
+						"Texture.chestplate",
+						"Texture.leggings",
+						"Texture.boots",
+						"Texture.trident",
+						"Texture.bow"
+
+					]
+				},
+				"geometries": {
+					"Array.geo": [
+						"Geometry.default",
+						"Geometry.elytra",
+						"Geometry.axe",
+						"Geometry.pickaxe",
+						"Geometry.shovel",
+						"Geometry.shield",
+						"Geometry.crossbow",
+						"Geometry.helmet",
+						"Geometry.chestplate",
+						"Geometry.leggings",
+						"Geometry.boots",
+						"Geometry.trident",
+						"Geometry.bow"
+
+					]
+				}
+			},
+			"geometry": "Array.geo[query.property('raiyon:shape')]"
+		}
+	}
+}

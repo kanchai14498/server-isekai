@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:tentacle",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/entity/magic/tentacle"
+			},
+			"geometry": {
+				"default": "geometry.tentacle"
+			},
+			"scripts": {
+				"animate": [
+                    "stand_up",
+                    "loop"
+				],
+				"initialize": [
+					"variable.random_rot = Math.random_integer(0, 360);"
+				]
+			},
+			"animations": {
+				"stand_up": "animation.tentacle.stand_up",
+				"loop": "animation.tentacle.loop"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

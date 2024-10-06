@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.oberon.walk": {
+      "initial_state": "default",
+      "states": {
+
+        "default": {
+          "transitions": [
+            { "walk_sequence": "q.modified_move_speed >= 0.40 && q.property('cso:state') != 'dying'" }
+          ]
+        },
+
+        "walk_sequence": {
+          "transitions": [
+            { "walk_sequence.end": "q.life_time - v.state_time > 0.72" }
+          ],
+          "on_entry": [
+            "v.state_time = q.life_time;",
+            "/playsound entity.oberon.step @a ~~~ 3",
+            "/camerashake add @a[r=25] 0.2 1 positional"
+          ]
+        },
+        "walk_sequence.end": {
+          "transitions": [ { "default": "1.0" } ],
+          "on_entry": [
+            "v.state_time = q.life_time;"
+          ]
+        }
+
+      }
+    }
+
+  }
+}

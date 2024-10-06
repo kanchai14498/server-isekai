@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.atomic_hole.cycle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"scale": "query.anim_time * 0.1 + 1"
+				},
+				"body_0": {
+					"rotation": ["query.anim_time*150-89", "query.anim_time*140-32", "query.anim_time*220+87"]
+				},
+				"body_1": {
+					"rotation": ["-query.anim_time*70+65", "-query.anim_time*90+98", "-query.anim_time*110+2"],
+					"scale": "1 + query.anim_time * 0.05"
+				},
+				"body_2": {
+					"rotation": ["query.anim_time*30+7", "query.anim_time*70+66", "-query.anim_time*60+80"],
+					"scale": "1 + query.anim_time * 0.1"
+				},
+				"body_3": {
+					"rotation": ["query.anim_time*90+89", "-query.anim_time*10+32", "query.anim_time*30+22"],
+					"scale": "1 + query.anim_time * 0.15"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.fighting_spirit": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"gain_exp": "variable.attack_time > 0"},
+						{"unlock_power": "query.scoreboard('isekai:fighting_spirit_exp') >= 5000 && query.is_item_name_any('slot.hotbar', 8, 'isekai:slot_locked')"},
+						{"fight_spirit_on": "(query.get_equipped_item_name('main_hand') == 'soul_manipulation' && query.is_using_item && query.scoreboard('isekai:fighting_spirit') == 0) && query.scoreboard('amw:soul') > 0"},
+						{"fighting_spirit_off": "query.get_equipped_item_name('main_hand') == 'soul_manipulation' && query.is_using_item && query.scoreboard('isekai:fighting_spirit') == 1"}
+					],
+					"blend_via_shortest_path": true
+				},
+				"fight_spirit_on": {
+					"on_entry": ["/event entity @s isekai:fighting_spirit"],
+					"transitions": [
+						{"default": "query.get_equipped_item_name('main_hand') == 'soul_manipulation' && !query.is_using_item"}
+					],
+					"blend_via_shortest_path": true
+				},
+				"fighting_spirit_off": {
+					"on_entry": ["/event entity @s isekai:normal_player"],
+					"transitions": [
+						{"default": "query.get_equipped_item_name('main_hand') == 'soul_manipulation' && !query.is_using_item"}
+					],
+					"blend_via_shortest_path": true
+				},
+				"gain_exp": {
+					"on_entry": ["/function fighting_spirit/gain_exp"],
+					"transitions": [
+						{"default": "variable.attack_time <= 0"}
+					],
+					"blend_via_shortest_path": true
+				},
+				"unlock_power": {
+					"on_entry": ["/function fighting_spirit/unlocked"],
+					"transitions": [
+						{"default": "query.is_item_name_any('slot.hotbar', 8, 'isekai:soul_manipulation')"}
+					],
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

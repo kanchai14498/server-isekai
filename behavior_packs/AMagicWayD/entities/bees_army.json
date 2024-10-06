@@ -1,0 +1,173 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:bees_army",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+            "properties": {
+              "amw:enchant_level": {
+                "type": "int", 
+                "range": [0, 4], 
+                "default": 0, 
+                "client_sync": true 
+              }
+            }
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			},
+            "angry_bee": {
+                "minecraft:angry": {
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 2,
+                    "attack_once": true,
+                    "speed_multiplier": 1.4,
+                    "on_attack": {
+                        "event": "countdown_to_perish_event",
+                        "target": "self"
+                    }
+                }
+            },
+            "perish": {
+                "minecraft:hurt_on_condition": {
+                    "damage_conditions": [
+                        {
+                            "cause": "none",
+                            "damage_per_tick": 999
+                        }
+                    ]
+                }
+            },
+            "countdown_to_perish": {
+                "minecraft:mark_variant": {
+                  "value": 1
+                },
+                "minecraft:behavior.panic": {
+                    "priority": 1,
+                    "speed_multiplier": 1.25,
+                    "force": true
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [5, 20],
+                    "randomInterval": true,
+                    "time_down_event": {
+                        "event": "despawn",
+                        "target": "self"
+                    }
+                }
+            }
+		},
+			
+		"components": {
+            "minecraft:on_target_acquired": {
+                "event": "attacked",
+                "target": "self"
+            },
+            "minecraft:tameable": {
+              "probability": 0.0
+            },
+            "minecraft:is_tamed": {},
+            "minecraft:behavior.follow_owner": {
+              "priority": 6,
+              "speed_multiplier": 1.0,
+              "start_distance": 10,
+              "stop_distance": 2
+            },
+            "minecraft:behavior.owner_hurt_by_target": {
+              "priority": 1
+            },
+            "minecraft:behavior.owner_hurt_target": {
+              "priority": 2
+            },
+            "minecraft:movement": {
+                "value": 0.3
+            },
+            "minecraft:flying_speed": {
+                "value": 0.15
+            },
+            "minecraft:collision_box": {
+                "width": 0.55,
+                "height": 0.5
+            },
+            "minecraft:behavior.float": {
+                "priority": 19
+            },
+            "minecraft:type_family": {
+                "family": [ "bee", "mob", "magic" ]
+            },
+			"minecraft:attack": {
+				"damage": 2,
+				"effect_name": "poison",
+				"effect_duration": 10
+			},
+            "minecraft:behavior.random_hover": {
+                "priority": 12,
+                "xz_dist": 8,
+                "y_dist": 8,
+                "y_offset": -1,
+                "interval": 1,
+                "hover_height": [1, 4]
+            },
+            "minecraft:navigation.hover": {
+                "can_path_over_water": true,
+                "can_sink": false,
+                "can_pass_doors": false,
+                "can_path_from_air": true,
+                "avoid_water": true,
+                "avoid_damage_blocks": true,
+                "avoid_sun": false
+            },
+            "minecraft:movement.hover": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_fly": {},
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {
+			"attacked": {
+				"add": {
+					"component_groups": [ "angry_bee" ]
+				}
+			},
+			"perish_event": {
+				"add": {
+					"component_groups": [ "perish" ]
+				}
+			},
+			"countdown_to_perish_event": {
+				"remove": {
+                    "component_groups": [
+                        "angry_bee"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "countdown_to_perish"
+                    ]
+                }
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			}
+		}
+	}
+}

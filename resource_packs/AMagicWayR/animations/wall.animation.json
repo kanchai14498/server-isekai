@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.wall.start": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"root": {
+					"rotation": [0, 0, 0],
+					"position": {
+						"0.0": [0, -50, 0],
+						"0.6333": [0, -48, 0]
+					}
+				},
+				"wall_0": {
+					"position": {
+						"0.0": ["math.cos(query.anim_time*2800)", 0, "math.sin(query.anim_time*2400)"],
+						"0.3667": ["math.cos(query.anim_time*1800)", 31, "math.sin(query.anim_time*1400)"],
+						"0.5": ["math.cos(query.anim_time*800)", 50, "math.sin(query.anim_time*200)"],
+						"0.6333": [0, 46, 0],
+						"0.7667": [0, 48, 0]
+					}
+				},
+				"wall_1": {
+					"position": {
+						"0.1667": ["math.cos(query.anim_time*2800+500)", 0, "math.sin(query.anim_time*2400+500)"],
+						"0.5333": ["math.cos(query.anim_time*1800+500)", 31, "math.sin(query.anim_time*1400+500)"],
+						"0.6667": ["math.cos(query.anim_time*800+500)", 50, "math.sin(query.anim_time*200+500)"],
+						"0.7667": [0, 46, 0],
+						"0.9": [0, 48, 0]
+					}
+				},
+				"wall_2": {
+					"position": {
+						"0.3667": ["math.cos(query.anim_time*2800+1000)", 0, "math.sin(query.anim_time*2400+1000)"],
+						"0.7333": ["math.cos(query.anim_time*1800+1000)", 31, "math.sin(query.anim_time*1400+1000)"],
+						"0.8667": ["math.cos(query.anim_time*800+1000)", 50, "math.sin(query.anim_time*200+1000)"],
+						"0.9333": [0, 46, 0],
+						"1.0": [0, 48, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "earth_magic_effect",
+					"locator": "root_loc"
+				},
+				"0.0333": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "head_0"
+				},
+				"0.2": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_0"
+				},
+				"0.2333": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "head_1"
+				},
+				"0.4": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "head_2"
+				},
+				"0.4333": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_1"
+				},
+				"0.5333": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "tail_0"
+				},
+				"0.6333": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "tail_1"
+				},
+				"0.6667": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_2"
+				},
+				"0.7667": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_0"
+				},
+				"0.8667": {
+					"effect": "earth_magic_cast_impact",
+					"locator": "tail_2"
+				},
+				"0.9333": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_1"
+				},
+				"1.0": {
+					"effect": "earth_magic_effect",
+					"locator": "tail_2"
+				}
+			}
+		}
+	}
+}

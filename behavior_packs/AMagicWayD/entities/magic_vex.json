@@ -1,0 +1,123 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "amw:magic_vex",
+      "runtime_identifier": "minecraft:vex",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "amw:enchant_level": {
+          "type": "int", 
+          "range": [0, 4], 
+          "default": 0, 
+          "client_sync": true 
+        }
+      }
+    },
+
+    "component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			}
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "vex", "monster", "mob", "magic" ]
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/vex_gear.json"
+      },
+      "minecraft:health": {
+        "value": 14,
+        "max": 14
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.8
+      },
+      "minecraft:movement": {
+        "value": 1.0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {
+
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:fire_immune": {
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.charge_attack": {
+        "priority": 4
+      },
+      "minecraft:tameable": {
+        "probability": 0.0
+      },
+      "minecraft:is_tamed": {},
+      "minecraft:behavior.follow_owner": {
+        "priority": 6,
+        "speed_multiplier": 1.0,
+        "start_distance": 10,
+        "stop_distance": 2
+      },
+      "minecraft:behavior.owner_hurt_by_target": {
+        "priority": 1,
+        "max_dist": 64
+      },
+      "minecraft:behavior.owner_hurt_target": {
+        "priority": 2,
+        "max_dist": 64
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 9,
+        "look_distance": 6.0,
+        "probability": 0.02,
+        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob"}
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "hurt_owner": true
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:game_event_movement_tracking": {
+        "emit_move": false,
+        "emit_swim": false
+      },
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+    },
+
+    "events": {
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			}
+    }
+  }
+}

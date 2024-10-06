@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:ice_spike",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/magic/ice_spike"
+			},
+			"geometry": {
+				"default": "geometry.ice_spike"
+			},
+			"scripts": {
+				"animate": [ "start", "random", "size" ],
+				"initialize": [
+					"variable.random_rot = Math.random_integer(0, 360);",
+					"variable.random_size = Math.random_integer(1, 2);"
+				]
+			},
+			"animations": {
+				"start": "animation.ice_spike.start",
+				"random": "animation.magic.random_rotation",
+				"size": "animation.magic.random_size"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

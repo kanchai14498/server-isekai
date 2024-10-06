@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.orb.cycle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["query.anim_time*135", "query.anim_time*90", "query.anim_time*45"]
+				},
+				"shell": {
+					"rotation": ["-query.anim_time*90", "-query.anim_time*45", "-query.anim_time*135"]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "magic_orb_trails"
+				}
+			}
+		}
+	}
+}

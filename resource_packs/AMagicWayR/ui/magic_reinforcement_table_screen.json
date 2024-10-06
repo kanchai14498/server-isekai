@@ -1,0 +1,866 @@
+{
+    "namespace": "magic_reinforcement_table",
+
+    "add_button@scroll_image.container_item_with_no_durability": {
+        "$button_ref": "magic_reinforcement_table.button_prototype",
+        "size": [ 9, 9 ],
+        "$item_renderer_panel_size": [ 7, 7 ],
+        "$item_renderer_size": [ 7, 7 ],
+        "$cell_image_size": [ 9, 9 ],
+        "$background_images": "scroll_image.black_border",
+        "$item_renderer": "scroll_image.attribute_add_button",
+        "$highlight_control": "scroll_image.highlight_add_panel"
+    },
+
+    "transform_spell_book@scroll_image.black_border": {
+        "size": [ "100%", 25 ],
+        "controls": [
+            {
+                "container@common.container_item": {
+                    "$button_ref": "magic_reinforcement_table.button_prototype",
+                    "size": [ "100% - 1px", 23 ],
+                    "$item_renderer_panel_size": [ "100% - 1px", 23 ],
+                    "$item_renderer_offset": [ 49, 0 ],
+                    "$cell_image_size": [ "100% - 1px", 23 ],
+                    "$background_images": "scroll_image.black_button_image",
+                    "$item_renderer": "scroll_image.transform_spell",
+                    "$highlight_control": "scroll_image.highlight_transform"
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "container_items"
+            },
+            {
+                "binding_name": "#collection_index",
+                "binding_type": "collection_details",
+                "binding_collection_name": "container_items"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#collection_index > 13)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    "button_prototype@common.container_slot_button_prototype": {
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.container_auto_place",
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "button.container_auto_place",
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_auto_place",
+                "to_button_id": "button.container_auto_place",
+                "mapping_type": "pressed"
+            }
+        ]
+    },
+
+    "spell_binding_item": {
+        "type": "panel",
+        "size": [ 0, 0 ],
+        "controls": [
+            {
+                "item_0@common.container_item": {
+                    "offset": [ -68, -17 ],
+                    "size": [ 25, 25 ],
+                    "$item_renderer_panel_size": [ 25, 25 ],
+                    "$cell_image_size": [ 25, 25 ],
+                    "$cell_overlay_ref": "scroll_image.spell_book_overlay",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 0)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_1": {
+                    "type": "panel",
+                    "size": [ 160, 156 ],
+                    "offset": [ -175, 28 ],
+                    "layer": 2,
+                    "controls": [
+                        {
+                            "text@scroll_image.item_name_panel": {
+                                "size": [ 160, 156 ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "spell_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 1 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_2@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, -23 ],
+                    "$name": "Soul Capacity",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 2 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_3@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, -13 ],
+                    "$name": "Fire Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 3 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_4@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, -3 ],
+                    "$name": "Water Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 4 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_5@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 7 ],
+                    "$name": "Nature Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 5 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_6@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 17 ],
+                    "$name": "Ice Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 6 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_7@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 27 ],
+                    "$name": "Void Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 7 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_8@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 37 ],
+                    "$name": "Dark Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 8 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_9@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 47 ],
+                    "$name": "Light Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 9 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_10@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 57 ],
+                    "$name": "Wind Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 10 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_11@magic_reinforcement_table.add_button": {
+                    "offset": [ 248, 67 ],
+                    "$name": "Thunder Magic",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 11 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_12@common.container_item": {
+                    "offset": [ -68, 9 ],
+                    "$cell_overlay_ref": "enchanting.lapis_image",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 12)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "item_13": {
+                    "type": "panel",
+                    "size": [ 80, 126 ],
+                    "offset": [ 208, 12 ],
+                    "layer": 2,
+                    "controls": [
+                        {
+                            "text@scroll_image.item_name_panel": {}
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_name": "#collection_index",
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "container_items"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "attributes_toggle", 
+                            "source_property_name": "#toggle_state", 
+                            "target_property_name": "#toggle_state" 
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#collection_index = 13 and #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "magic_reinforcement_table_input": {
+        "type": "stack_panel",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "orientation": "horizontal",
+        "size": [ 0, 0 ],
+        "$scale": 14,
+
+        "collection_name": "container_items",
+        "$item_collection_name": "container_items",
+        
+        "factory": {
+            "name": "magic_reinforcement_table",
+            "control_name": "magic_reinforcement_table.spell_binding_item"
+        },
+        "property_bag": {
+            "#scale": "$scale"
+        },
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_property_name": "(#scale * 1)",
+                "target_property_name": "#collection_length"
+            }
+        ]
+    },
+    
+    "reinforcement_choice": {
+        "type": "stack_panel",
+        "size": ["100% - 4px", "100%c + 1px"],
+        "offset": [2,0],
+        "orientation": "vertical",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "$scale": 21,
+
+        "collection_name": "container_items",
+        "$item_collection_name": "container_items",
+
+        "factory":{
+            "name": "magic_reinforcement_table",
+            "control_name": "magic_reinforcement_table.transform_spell_book"
+        },
+        "property_bag": {
+            "#scale": "$scale"
+        },
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_property_name": "(#scale * 1)",
+                "target_property_name": "#collection_length"
+            }
+        ]
+    },
+
+    "scrolling_panel@common.scrolling_panel": {
+        "$show_background": false,
+        "size": ["100% - 2px", "100% - 3px"],
+        "$scrolling_content": "magic_reinforcement_table.reinforcement_choice",
+        "$scroll_size": [ 1, "100% - 4px" ],
+        "$scroll_bar_right_padding_size": [ 1, 0 ],
+        "$scroll_bar_right_padding_size_touch": [ 2, 0 ]
+    },
+
+    "layout_toggle_content": {
+        "type": "image",
+        "offset": [ 0, -1 ],
+        "anchor_to": "top_middle",
+        "anchor_from": "top_middle",
+        "texture": "$icon",
+        "size": [ 19, 13 ],
+        "layer": 1
+    },
+
+    "toolbar": {
+        "type": "image",
+        "texture": "textures/ui/toolbar_background",
+        "size": [
+            "100%cm + 17px",
+            26
+        ],
+        "offset": [ 0, 3 ],
+        "anchor_from": "top_right",
+        "anchor_to": "bottom_right",
+        "controls": [
+            {
+                "inner": {
+                    "type": "stack_panel",
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%c",
+                        18
+                    ],
+                    "controls": [
+                        {
+                            "spell_description@common_toggles.light_image_toggle": {
+                                "$toggle_view_binding_name": "spell_toggle",
+                                "$icon": "textures/ui/spell_description",
+                                "$button_content": "magic_reinforcement_table.layout_toggle_content",
+                                "$toggle_name": "layout_toggle",
+                                "$button_mappings": [
+                                  {
+                                    "from_button_id": "button.menu_select",
+                                    "to_button_id": "button.menu_select",
+                                    "mapping_type": "pressed"
+                                  },
+                                  {
+                                    "from_button_id": "button.menu_ok",
+                                    "to_button_id": "button.menu_ok",
+                                    "mapping_type": "focused"
+                                  },
+                                  {
+                                    "from_button_id": "button.menu_tab_left",
+                                    "to_button_id": "button.spell_toggle",
+                                    "mapping_type": "global"
+                                  }
+                                ],
+                                "size": [ 25, 18 ]
+                            }
+                        },
+                        {
+                            "space": {
+                                "type": "panel",
+                                "size": [ 2, 0 ]
+                            }
+                        },
+                        {
+                            "spell_attributes@common_toggles.light_image_toggle": {
+                                "$toggle_view_binding_name": "attributes_toggle",
+                                "$icon": "textures/ui/spell_attributes",
+                                "$button_content": "magic_reinforcement_table.layout_toggle_content",
+                                "$toggle_name": "layout_toggle",
+                                "$button_mappings": [
+                                  {
+                                    "from_button_id": "button.menu_select",
+                                    "to_button_id": "button.menu_select",
+                                    "mapping_type": "pressed"
+                                  },
+                                  {
+                                    "from_button_id": "button.menu_ok",
+                                    "to_button_id": "button.menu_ok",
+                                    "mapping_type": "focused"
+                                  },
+                                  {
+                                    "from_button_id": "button.menu_tab_right",
+                                    "to_button_id": "button.attributes_toggle",
+                                    "mapping_type": "global"
+                                  }
+                                ],
+                                "size": [ 25, 18 ]
+                            }
+                        },
+                        {
+                            "space": {
+                                "type": "panel",
+                                "size": [ 2, 0 ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#close_button_visible",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "close_button_panel": {
+                                "type": "panel",
+                                "size": [ 15, "100%" ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#close_button_visible",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "close_button@common.light_close_button": {
+                                            "offset": [ 0, 0 ],
+                                            "anchor_from": "center",
+                                            "anchor_to": "center"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "helper": {
+                    "type": "image",
+                    "texture": "textures/ui/generic_bumper_left",
+                    "anchor_from": "left_middle",
+                    "anchor_to": "right_middle",
+                    "size": [ 26, 26 ],
+                    "offset": [ -1, 0 ],
+                    "bindings": [
+                        {
+                            "binding_name": "(#is_using_gamepad)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "helper": {
+                    "type": "image",
+                    "texture": "textures/ui/generic_bumper_right",
+                    "anchor_from": "right_middle",
+                    "anchor_to": "left_middle",
+                    "size": [ 26, 26 ],
+                    "offset": [ 1, 0 ],
+                    "bindings": [
+                        {
+                            "binding_name": "(#is_using_gamepad)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "magic_reinforcement_table_panel": {
+        "type": "panel",
+        "controls": [
+            { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+            { "selected_item_details_factory@common.selected_item_details_factory": {} },
+            { "item_lock_notification_factory@common.item_lock_notification_factory": {} },
+            {
+                "root_panel@common.root_panel": {
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "all_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%c",
+                                    "166px"
+                                ],
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "spell_book_panel@scroll_image.grey_border": {
+                                            "size": [ 170, 166 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "spell_toggle", 
+                                                    "source_property_name": "#toggle_state", 
+                                                    "target_property_name": "#visible" 
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "space": {
+                                            "type": "panel",
+                                            "size": [ 2, 166 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "spell_toggle", 
+                                                    "source_property_name": "#toggle_state", 
+                                                    "target_property_name": "#visible" 
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "main_panel": {
+                                            "type": "panel",
+                                            "size": [ 177, 166 ],
+                                            "controls": [
+                                                { 
+                                                    "toolbar@magic_reinforcement_table.toolbar": {
+                                                    } 
+                                                },
+                                                { 
+                                                    "common_panel@common.common_panel": {
+                                                        "$show_close_button": false
+                                                    } 
+                                                },
+                                                {
+                                                    "chest_panel": {
+                                                        "type": "panel",
+                                                        "layer": 5,
+                                                        "controls": [
+                                                            {
+                                                                "small_chest_panel_top_half": {
+                                                                    "type": "panel",
+                                                                    "size": [ "100%", "50%" ],
+                                                                    "offset": [ 0, 12 ],
+                                                                    "anchor_to": "top_middle",
+                                                                    "anchor_from": "top_middle",
+                                                                    "controls": [
+                                                                        { 
+                                                                            "chest_label": {
+                                                                                "type": "label",
+                                                                                "offset": [ 0, -5 ],
+                                                                                "anchor_from": "top_middle",
+                                                                                "anchor_to": "top_middle",
+                                                                                "text": "Magic Reinforcement Table",
+                                                                                "color": "$title_text_color",
+                                                                                "layer": 2
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "magic_reinforcement_table_input@magic_reinforcement_table.magic_reinforcement_table_input": {
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "black_border@scroll_image.black_border": {
+                                                                                "anchor_from": "right_middle",
+                                                                                "anchor_to": "right_middle",
+                                                                                "layer": 1,
+                                                                                "offset": [ -7, -5 ],
+                                                                                "size": [ 130, 55 ],
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "scrolling_panel@magic_reinforcement_table.scrolling_panel": {}
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                                                            { "hotbar_grid@common.hotbar_grid_template": {} },
+                                                            { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
+                                                            { "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } },
+                                                            {
+                                                                "point_label": {
+                                                                    "type": "label",
+                                                                    "text": "Item Point Left:",
+                                                                    "offset": [ 137, -73 ],
+                                                                    "layer": 2,
+                                                                    "bindings": [
+                                                                        {
+                                                                            "binding_type": "view",
+                                                                            "source_control_name": "attributes_toggle", 
+                                                                            "source_property_name": "#toggle_state", 
+                                                                            "target_property_name": "#visible" 
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "space": {
+                                            "type": "panel",
+                                            "size": [ 2, 166 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "attributes_toggle", 
+                                                    "source_property_name": "#toggle_state", 
+                                                    "target_property_name": "#visible" 
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "item_attributes_panel@scroll_image.grey_border": {
+                                            "size": [ 170, 166 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "attributes_toggle", 
+                                                    "source_property_name": "#toggle_state", 
+                                                    "target_property_name": "#visible" 
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+                        { "gamepad_cursor@common.gamepad_cursor_button": {} }
+                    ]
+                }
+            }
+        ]
+    }
+}

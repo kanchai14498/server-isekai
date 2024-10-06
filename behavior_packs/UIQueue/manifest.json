@@ -1,0 +1,26 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Created by qduoubp",
+        "name": "UI Queue",
+        "uuid": "2d4fb75b-c854-460b-a2f5-b4639e11eaa6",
+        "version": [1, 2, 0],
+        "min_engine_version": [1, 19, 0]
+    },
+    "modules": [
+        {
+            "description": "",
+            "type": "script",
+            "language": "javascript",
+            "uuid": "ffede6a3-5d69-42c2-b1dc-75fcca05cb1f",
+            "version": [1, 2, 0],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "dependencies": [
+        {
+			"module_name": "@minecraft/server",
+			"version": "1.5.0"
+		}
+    ]
+}

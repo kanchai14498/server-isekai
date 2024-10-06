@@ -1,0 +1,33 @@
+execute as @a[hasitem=[{item=dk:stinky_medical_mask,location=slot.armor.head}]] run effect @s night_vision 15 0 true
+execute as @a[hasitem=[{item=dk:plague_head,location=slot.armor.head}]] run effect @s night_vision 15 0 true
+execute as @a[hasitem=[{item=dk:sentinel_soldier_helmet,location=slot.armor.head},{item=dk:sentinel_soldier_chestplate,location=slot.armor.chest},{item=dk:sentinel_soldier_leggings,location=slot.armor.legs},{item=dk:sentinel_soldier_boots,location=slot.armor.feet}]] run effect @s fire_resistance 1 1 true
+execute as @a[hasitem=[{item=dk:sentinel_soldier_helmet,location=slot.armor.head},{item=dk:sentinel_soldier_chestplate,location=slot.armor.chest},{item=dk:sentinel_soldier_leggings,location=slot.armor.legs},{item=dk:sentinel_soldier_boots,location=slot.armor.feet}]] run effect @s wither 0 0 true
+execute as @a[hasitem=[{item=dk:elemental_soldier_helmet,location=slot.armor.head},{item=dk:elemental_soldier_chestplate,location=slot.armor.chest},{item=dk:elemental_soldier_leggings,location=slot.armor.legs},{item=dk:elemental_soldier_boots,location=slot.armor.feet}]] run effect @s fire_resistance 1 1 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s fire_resistance 1 1 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s health_boost 2 4 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s strength 1 2 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s resistance 1 3 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s jump_boost 1 2 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s speed 1 3 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s wither 0 0 true
+execute as @a[hasitem=[{item=dk:unbound_helmet,location=slot.armor.head},{item=dk:unbound_chestplate,location=slot.armor.chest},{item=dk:unbound_leggings,location=slot.armor.legs},{item=dk:unbound_boots,location=slot.armor.feet}]] run effect @s poison 0 0 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s fire_resistance 1 1 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s health_boost 2 4 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s regeneration 1 3 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s strength 1 3 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s resistance 1 3 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s jump_boost 1 3 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s speed 1 2 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s wither 0 0 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s poison 0 0 true
+execute as @a[hasitem=[{item=dk:oath_armor_helmet,location=slot.armor.head},{item=dk:oath_armor_chestplate,location=slot.armor.chest},{item=dk:oath_armor_leggings,location=slot.armor.legs},{item=dk:oath_armor_boots,location=slot.armor.feet}]] run effect @s instant_damage 1 255 true
+
+execute as @a[hasitem=[{item=darkosto_gravestone:finder}]] run clear @s darkosto_gravestone:finder
+execute as @a[hasitem=[{item=darkosto_gravestone:guide_book}]] run clear @s darkosto_gravestone:guide_book
+
+execute as @a[tag=!owner_god_demon_sword] if entity @a[tag=owner_god_demon_sword] run clear @s isekai:god_demon_sword
+
+execute as @a[hasitem={item=isekai:god_demon_sword}, tag=!owner_god_demon_sword] run tag @s add owner_god_demon_sword
+
+execute as @a[tag=owner_god_demon_sword] unless entity @s[hasitem={item=isekai:god_demon_sword}] run tag @s remove owner_god_demon_sword
+

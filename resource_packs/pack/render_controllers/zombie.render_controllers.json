@@ -1,0 +1,55 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.sf": {
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"variable.x = math.mod(math.floor(query.life_time * 25),33) ; return Array.skins[variable.x];"
+			],
+			"arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.fire_1",
+            "Texture.fire_2",
+            "Texture.fire_3",
+            "Texture.fire_4",
+            "Texture.fire_5",
+            "Texture.fire_6",
+            "Texture.fire_7",
+            "Texture.fire_8",
+            "Texture.fire_9",
+            "Texture.fire_10",
+            "Texture.fire_11",
+            "Texture.fire_12",
+            "Texture.fire_13",
+            "Texture.fire_14",
+            "Texture.fire_15",
+            "Texture.fire_16",
+            "Texture.fire_17",
+            "Texture.fire_18",
+            "Texture.fire_19",
+            "Texture.fire_20",
+            "Texture.fire_21",
+            "Texture.fire_22",
+            "Texture.fire_23",
+            "Texture.fire_24",
+            "Texture.fire_25",
+            "Texture.fire_26",
+            "Texture.fire_27",
+            "Texture.fire_28",
+            "Texture.fire_29",
+            "Texture.fire_30",
+            "Texture.fire_31",
+            "Texture.fire_32"
+          ]
+        }
+				
+			},
+			"geometry": "Geometry.default"
+		}
+	}
+}

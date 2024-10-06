@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:freeze_effect",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/magic/freeze_effect"
+			},
+			"geometry": {
+				"default": "geometry.freeze_effect"
+			},
+			"animations": {
+			  	"size": "animation.magic.random_size"
+			},
+			"scripts": {
+				"initialize": [
+					"variable.random_size = Math.random_integer(1, 1.5);"
+				],
+				"animate": [
+					"size"
+				]
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+  "entity_sounds": {
+    "entities": {
+
+      "cso:oberon": {
+        "events": {
+          "ambient": "",
+          "hurt": "",
+          "death": ""
+        },
+        "pitch": 1.0,
+        "volume": 1.0
+      },
+
+      "cso:obeball": {
+        "events": {
+          "ambient": "",
+          "hurt": "",
+          "death": ""
+        },
+        "pitch": 1.0,
+        "volume": 1.0
+      }
+
+    }
+  }
+}

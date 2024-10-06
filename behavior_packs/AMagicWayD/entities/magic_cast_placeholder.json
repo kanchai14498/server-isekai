@@ -1,0 +1,53 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:magic_cast_placeholder",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 0
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:projectile": {
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 0,
+				"anchor": 1,
+				"offset": [ 0, -0.1, 0 ],
+				"power": 0.001,
+				"gravity": 0.00
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {"none":{},"soul_devour":{},"thunder_step":{},"blazing_trail":{},"dirt_wall":{},"absolute_area":{},"fire_obelisk":{},"fire_obelisk_area":{},"decoy_obelisk":{},"levitate":{},"water_fountain":{},"aero_walk":{},"explosion":{},"devine_judgement":{},"sonic_boom":{},"mutation_vines":{},"self_healing":{},"devine_healing":{},"aegis":{},"magic_lasso":{},"magnetism":{},"soul_detection":{},"book_of_healing":{},"blood_drain":{},"thundering":{},"cumulonimbus":{},"turn_undead":{},"area_heals":{},"lava_land":{},"purify":{},"self_rewind":{},"flight":{},"astral_mount":{},"blessing":{},"burning_wall":{},"devine_ascension":{},"dragon_breath":{},"fire_breath":{},"air_vortex":{},"wind_barrier":{},"invisible_bridge":{},"spider_climb":{},"enchance_vegetation":{},"snowball_burst":{},"light_source":{},"bubble_rush":{},"throwing_ancor":{},"charged_ancor":{},"ice_branch":{},"ice_shard":{},"shepherd":{},"skull_army":{},"vex_army":{},"bees_army":{},"zombie_servant":{},"iron_golem_guard":{},"skeleton_servant":{},"ice_sculpture":{},"light_judgement":{},"possesion":{},"telekenesis":{},"atomic_hole":{},"atomic_destruction":{},"fireball":{},"water_bomb":{},"icicle":{},"burning_heals":{},"fireflies_soul":{},"fire_bullet":{},"bubble_trap":{},"water_pudding":{},"toxic_flood":{},"toxic_step":{},"tentacle_area":{},"tentacle":{},"leviathan_aura":{},"multiple_fire_bullet":{},"burst_of_light":{},"meteor_rain":{},"scorch":{},"lightning_bolt":{},"sacred_hammer":{},"thunder_streak":{},"evoker_fang":{},"fang_aura":{},"greater_evoker_fang":{},"fang_buffer":{},"wind_blows":{},"wind_projectile":{},"orb_of_thunder":{},"blast_force":{},"frostbite":{},"blink":{},"swap_teleportation":{},"alternate_damage":{},"teleport":{},"warp":{},"chaining_tnt":{},"exploding_tnt":{},"convert_soul":{},"light_beam":{},"poltergeist":{},"tornado":{},"thundering_arrow":{},"ice_glace":{},"gravity_pull_arrow":{},"explosive_arrow":{},"healing_arrow":{},"gusting_arrow":{},"scorching_shoot":{},"armadillo_spinner":{},"targeting_shoot":{},"aqua_surfing":{},"portals":{},"wind_whirl":{},"electrocute":{},"gravity_pull_attack":{},"burning_slash":{},"chain_damage":{},"provoke":{},"ricochet_trident":{},"everlasting_jump":{},"arrow_rain":{},"ice_bounce":{},"machine_gun_arrow":{},"icicle_bomb":{},"arrow_burst":{}, "void_swarm": {}}
+	}
+}

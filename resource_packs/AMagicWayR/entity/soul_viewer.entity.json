@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:soul_viewer",
+			"materials": {
+				"default": "magic_entity_additive_holo"
+			},
+			"textures": {
+				"default": "textures/entity/magic/nature_orb"
+			},
+			"geometry": {
+				"default": "geometry.magic_orb"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				]
+			},
+			"animations": {
+				"idle": "animation.orb.cycle"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

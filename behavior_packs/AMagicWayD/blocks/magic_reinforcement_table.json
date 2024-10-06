@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:block": {
+		"description": {
+			"identifier": "amw:magic_reinforcement_table",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:light_dampening": 1,
+			"minecraft:material_instances": {
+				"up": {
+					"texture": "magic_reinforcement_table_top",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "magic_reinforcement_table_bottom",
+					"render_method": "opaque"
+				},
+				"*": {
+					"texture": "magic_reinforcement_table_side",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:custom_components": ["amw:magic_reinforcement_table"]
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+  "format_version": "1.18.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "amw:astral_mount",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	
+	"component_groups": {
+		"set_despawn": {
+			"minecraft:instant_despawn":{}
+		}
+	},
+	
+    "components": {
+	  "minecraft:collision_box": {
+		"width": 1.4,
+		"height": 1.6
+	  },
+	  "minecraft:health": {
+        "value": 1,
+        "max": 0
+      },
+	  "minecraft:fire_immune": {
+      },
+      "minecraft:type_family": {
+        "family": [ "inanimate", "magic" ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "interact_text": "action.interact.mount",
+        "pull_in_entities": false,
+		"family_types": [
+			"player"
+		],
+		"seats": {
+		  "position": [ 0.0, 1.1, -0.2 ]
+		}
+      },
+	  "minecraft:damage_sensor": {
+		"triggers": {
+			"deals_damage": false
+		}
+	  },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+	  "minecraft:behavior.controlled_by_player": {
+		"priority": 0
+	  },
+      "minecraft:movement": {
+        "value": 0.2
+      },
+	  "minecraft:can_power_jump": {
+	  },
+      "minecraft:jump.static": {
+      },
+      "minecraft:horse.jump_strength": {
+        "value": 0.8
+      },
+	  "minecraft:input_ground_controlled": {},
+	  "minecraft:timer": {
+		"time": [ 0, 0 ],
+		"time_down_event": {
+		  "event": "seat_refresh"
+        }
+	  }
+    },
+
+    "events": {
+		"minecraft:entity_spawned": {},
+		"seat_refresh": {
+			"sequence": [
+			 	{
+					"filters": { 
+						"test": "rider_count", 
+						"subject": "self", 
+						"operator": "equals", 
+						"value": 0 
+					},
+					"trigger": "despawn"
+			  	}
+			]
+		},
+		"despawn": {
+			"add": {
+				"component_groups": [ "set_despawn" ]
+			}
+		}
+    }
+  }
+}

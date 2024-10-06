@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "amw:ancor",
+      "materials": {
+        "default": "entity",
+        "charged": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/entity/magic/ancor",
+        "charged": "textures/entity/creeper/creeper_armor"
+      },
+      "geometry": {
+        "default": "geometry.ancor",
+        "charged": "geometry.ancor_charged"
+      },
+      "animations": {
+        "move": "animation.projectile.move"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.shake = query.shake_time - query.frame_alpha;",
+          "variable.shake_power = variable.shake > 0.0 ? -Math.sin(variable.shake * 200.0) * variable.shake : 0.0;"
+        ],
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [ "controller.render.creeper_armor", "controller.render.default" ]
+    }
+  }
+}

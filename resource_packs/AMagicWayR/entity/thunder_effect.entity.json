@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:thunder_effect",
+			"materials": {
+				"default": "magic_entity_additive"
+			},
+			"textures": {
+				"default": "textures/entity/magic/thunder_effect"
+			},
+			"geometry": {
+				"default": "geometry.thunder_effect"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				],
+                "initialize": [
+                    "variable.x_rot = query.body_x_rotation;"
+                ]
+			},
+			"animations": {
+				"idle": "animation.thunder_effect.cycle"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

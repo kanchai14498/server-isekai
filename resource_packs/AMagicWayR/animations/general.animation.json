@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.general.static_rotation": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [0, "-this", 0]
+				}
+			}
+		},
+		"animation.general.invisible_root": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"root": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

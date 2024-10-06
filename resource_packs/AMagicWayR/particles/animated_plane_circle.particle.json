@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "magic:animated_plane_circle",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particles/circle"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.size;variable.offset;variable.animation_and_duration;variable.frame;variable.color_from;variable.color_to;"
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_initialization": {
+				"per_update_expression": "variable.duration = v.particle_age / v.particle_lifetime;"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "variable.animation_and_duration.z"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.size", "variable.size"],
+				"facing_camera_mode": "emitter_transform_xz",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 32,
+					"uv": ["variable.offset.x + variable.animation_and_duration.x * math.floor(variable.duration * variable.frame.x)", "variable.offset.y + variable.animation_and_duration.y * math.floor(variable.duration * variable.frame.y)"],
+					"uv_size": [1, 1]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["variable.color_from.r* (1-variable.duration) + variable.color_to.r* variable.duration", "variable.color_from.g* (1-variable.duration) + variable.color_to.g* variable.duration", "variable.color_from.b* (1-variable.duration) + variable.color_to.b* variable.duration", "variable.color_from.a* (1-variable.duration) + variable.color_to.a* variable.duration"]
+			}
+		}
+	}
+}

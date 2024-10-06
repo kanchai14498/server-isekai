@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.projectile.rotation": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["-query.vertical_speed*3", 0, 0]
+				}
+			}
+		},
+		"animation.projectile.move": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": ["-query.target_x_rotation", "-query.body_y_rotation", 0]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,866 @@
+{
+  "namespace": "magic_learning_station",
+  
+  "transparent": {
+    "type": "image",
+    "texture": "textures/ui/blank"
+  },
+
+  "background_scroll": {
+    "type": "image",
+    "texture": "textures/ui/learning_station/background_scroll"
+  },
+
+  "background_scroll_gap": {
+    "type": "image",
+    "texture": "textures/ui/learning_station/background_scroll_gap"
+  },
+
+  "black_border": {
+    "type": "image",
+    "texture": "textures/ui/background_with_border",
+    "layer": 1
+  },
+
+  "black_button_image": {
+    "type": "image",
+    "texture": "textures/ui/button_borderless_dark",
+    "layer": 1
+  },
+
+  "locked_spell_image": {
+    "type": "image",
+    "texture": "textures/ui/coin_button_borderless",
+    "layer": 1
+  },
+
+  "black_button_hover_image": {
+    "type": "image",
+    "texture": "textures/ui/button_border_dark",
+    "layer": 1
+  },
+
+  "button_border_dark": {
+    "type": "image",
+    "texture": "textures/ui/black_border",
+    "layer": 1
+  },
+
+  "button_border_light": {
+    "type": "image",
+    "texture": "textures/ui/focus_border_white",
+    "layer": 1
+  },
+
+  "scroll_frame": {
+    "type": "image",
+    "texture": "textures/ui/scroll_frame",
+    "layer": 1
+  },
+
+  "purple_border": {
+    "type": "image",
+    "texture": "textures/ui/purpleBorder",
+    "layer": 1
+  },
+
+  "magic_learning_station_content": {
+    "type": "panel",
+    "size": [ 480, 240],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "book_background": {
+          "type": "image",
+          "texture": "textures/ui/learning_station/book_background"
+        }
+      },
+      {
+        "scroll_craft_content@magic_learning_station.scroll_craft_content": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_property_name": "(not((#form_text - 'scroll_craft') = #form_text))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      { "gamepad_cursor@common.gamepad_cursor_button": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text = 'magic_learning_station.menu')",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  
+  "magic_scroll_panel": {
+    "type": "panel",
+    "size": [ 100, 170 ],
+    "controls": [
+      {
+        "background_scroll@magic_learning_station.background_scroll": {}
+      },
+      {
+        "background_scroll_gap@magic_learning_station.background_scroll_gap": {
+          "size": [ 98, 2 ],
+          "offset": [ 0, -30 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      },
+      {
+        "background_scroll_gap@magic_learning_station.background_scroll_gap": {
+          "size": [ 98, 2 ],
+          "offset": [ 0, -80 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+  
+  "magic_scroll_list_panel": {
+    "type": "panel",
+    "size": [ 305, 170 ],
+    "controls": [
+      {
+        "black_border@magic_learning_station.black_border": {}
+      },
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "$show_background": false,
+          "size": ["100% - 2px", "100% - 3px"],
+          "offset": [ 0, 2 ],
+          "$scrolling_content": "magic_learning_station.scroll_content",
+          "$scroll_size": [ 1, "100% - 4px" ],
+          "$scroll_bar_right_padding_size": [ 1, 0 ],
+          "$scroll_bar_right_padding_size_touch": [ 2, 0 ]
+        }
+      }
+    ]
+  },
+  
+  "scroll_content": {
+    "type": "stack_panel",
+    "size": ["100% - 4px", "100%c + 1px"],
+    "offset": [2,0],
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+
+    "factory":{
+      "name": "buttons",
+      "control_name": "magic_learning_station.scroll_list_button"
+    },
+
+    "collection_name": "form_buttons",
+    "bindings": [
+      {
+        "binding_name": "#form_button_length",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "scroll_list_button": {
+    "type": "panel",
+    "size": ["100%", 32],
+    "controls": [
+      {
+        "button@common.button": {
+          "$pressed_button_name": "button.form_button_click",
+          "size": ["100%", 32],
+          "controls": [
+            {
+              "default@magic_learning_station.button_border_dark": {
+                "controls": [
+                  {
+                    "default@magic_learning_station.black_button_image": {
+                      "size": ["100%-2px", "100%-2px"]
+                    }
+                  },
+                  {
+                    "spell_frame@magic_learning_station.scroll_frame": {
+                      "layer": 3,
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle",
+                      "offset": [ -4, 0 ],
+                      "size": [ 24, 24 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "hover@magic_learning_station.button_border_light": {
+                "controls": [
+                  {
+                    "default@magic_learning_station.black_button_hover_image": {
+                      "size": ["100%-2px", "100%-2px"]
+                    }
+                  },
+                  {
+                    "spell_frame@magic_learning_station.scroll_frame": {
+                      "layer": 3,
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle",
+                      "offset": [ -4, 0 ],
+                      "size": [ 24, 24 ],
+                      "controls": [
+                        {
+                          "hover@magic_learning_station.button_border_light": {
+                            "layer": 2,
+                            "size": [ 24, 24 ]
+                          }
+                        },
+                        {
+                          "hover@magic_learning_station.button_border_light": {
+                            "layer": 3,
+                            "size": [ 16, 16 ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spell_name": {
+                "type": "label",
+                "text": "#text",
+                "layer": 3,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 5, 0 ],
+                "text_alignment": "left_middle",
+                "bindings":[
+                  {
+                    "binding_name": "#form_button_text",
+                    "binding_name_override": "#content_label",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#content_label - 'amw:spell')",
+                    "target_property_name": "#text"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#content_label - 'amw:spell_locked') = #content_label)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "locked_spell@magic_learning_station.button_border_dark": {
+          "controls": [
+            {
+              "default@magic_learning_station.locked_spell_image": {
+                "size": ["100%-2px", "100%-2px"]
+              }
+            },
+            {
+              "spell_frame@magic_learning_station.button_border_dark": {
+                "layer": 3,
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "offset": [ -4, 0 ],
+                "size": [ 24, 24 ]
+              }
+            },
+            {
+              "spell_frame@magic_learning_station.locked_spell_image": {
+                "layer": 3,
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "offset": [ -5, 0 ],
+                "size": [ 22, 22 ]
+              }
+            },
+            {
+              "spell_name": {
+                "type": "label",
+                "text": "#text",
+                "layer": 3,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 5, 0 ],
+                "text_alignment": "left_middle",
+                "bindings":[
+                  {
+                    "binding_name": "#form_button_text",
+                    "binding_name_override": "#content_label",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#content_label - 'amw:spell_locked')",
+                    "target_property_name": "#text"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not((#content_label - 'amw:spell_locked') = #content_label))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "spell_image": {
+          "type": "image",
+          "texture": "#texture",
+          "layer": 6,
+          "size": [ 16, 16 ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ -8, 0 ],
+          "bindings":[
+            {
+              "binding_name": "#form_button_texture",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_texture_file_system",
+              "binding_name_override": "#texture_file_system",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#form_button_text",
+        "binding_name_override": "#content_label",
+        "binding_type": "collection",
+        "binding_collection_name": "form_buttons"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not((#content_label - 'amw:spell') = #content_label))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "magic_type_button": {
+    "type": "panel",
+    "size":  [ 0, 0 ],
+    "$button_image|default": "textures/ui/learning_station/fire_type_button",
+    "$button_param|default": "fire_type",
+    "controls": [
+      {
+        "button@common.button": {
+          "$pressed_button_name": "button.form_button_click",
+          "size": [ 64, 20 ],
+          "default_control": "default",
+          "hover_control": "hover",
+          "controls": [
+            {
+              "default": {
+                "type": "image",
+                "texture": "$button_image",
+                "layer": 1,
+                "clip_direction": "left",
+                "clip_ratio": 0.5,
+                "clip_pixelperfect": true,
+                "offset": [ 31, 0 ]
+              }
+            },
+            {
+              "hover": {
+                "type": "image",
+                "texture": "$button_image",
+                "layer": 5,
+                "clip_direction": "left",
+                "clip_ratio": 0.35,
+                "clip_pixelperfect": true,
+                "offset": [ 21, 0 ],
+                "controls": [
+                  {
+                    "text": {
+                      "type": "image",
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [ -11, 2 ],
+                      "size": [ "100%c + 12px", "100%c + 5px" ],
+                      "alpha": 0.7,
+                      "texture": "textures/ui/hud_tip_text_background",
+                      "controls": [
+                        {
+                          "actionbar_message": {
+                            "type": "label",
+                            "anchor_from": "center",
+                            "anchor_to": "center",
+                            "layer": 31,
+                            "text": "#text",
+                            "localize": false,
+                            "bindings":[
+                              {
+                                "binding_name": "#form_button_texture",
+                                "binding_name_override": "#text",
+                                "binding_type": "collection",
+                                "binding_collection_name": "form_buttons"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#content_label - 'locked') = #content_label)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "picked": {
+          "type": "image",
+          "size": [ 64, 20 ],
+          "offset": [ 17, 0 ],
+          "texture": "$button_image",
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not((#content_label - 'locked') = #content_label))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#form_button_text",
+        "binding_name_override": "#content_label",
+        "binding_type": "collection",
+        "binding_collection_name": "form_buttons"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ((#content_label - $button_param) = #content_label))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "static_panel": {
+    "type": "stack_panel",
+    "size": [ 0, 0 ],
+    "orientation": "horizontal",
+
+    "factory":{
+      "name": "buttons",
+      "control_name": "magic_learning_station.static_panel_content"
+    },
+
+    "collection_name": "form_buttons",
+    "bindings": [
+      {
+        "binding_name": "#form_button_length",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "description": {
+    "type": "label",
+    "text": "#text",
+    "layer": 2,
+    "size": [ "100%", "default" ],
+    "font_scale_factor": 0.7,
+    "bindings": [
+      {
+        "binding_name": "#form_button_texture",
+        "binding_name_override": "#text",
+        "binding_type": "collection",
+        "binding_collection_name": "form_buttons"
+      }
+    ]
+  },
+
+  "static_panel_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "scroll_description": {
+          "type": "panel",
+          "layer": 2,
+          "offset": [ 163, -33 ],
+          "size": [ 94, 85 ],
+          "controls": [
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "$show_background": false,
+                "size": ["100% - 2px", "100% - 3px"],
+                "offset": [ 0, 2 ],
+                "$scrolling_content": "magic_learning_station.description",
+                "$scroll_size": [ 1, "100% - 4px" ],
+                "$scroll_bar_right_padding_size": [ 1, 0 ],
+                "$scroll_bar_right_padding_size_touch": [ 2, 0 ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#content_label = 'description_scroll')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "scroll_recipe": {
+          "type": "label",
+          "text": "#text",
+          "layer": 2,
+          "offset": [ 163, 36 ],
+          "font_scale_factor": 0.7,
+          "size": [ 94, 47 ],
+          "bindings": [
+            {
+              "binding_name": "#form_button_texture",
+              "binding_name_override": "#text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#content_label = 'scroll_recipe')",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      },
+      {
+        "craft_button@common.button": {
+          "$pressed_button_name": "button.form_button_click",
+          "size": [ 90, 20 ],
+          "offset": [ 163, 75 ],
+          "controls": [
+            {
+              "default": {
+                "type": "image",
+                "texture": "textures/ui/learning_station/button_unpress",
+                "controls": [
+                  {
+                    "text": {
+                      "type": "label",
+                      "font_type": "MinecraftTen",
+                      "text": "Craft Spell",
+                      "offset": [ 0, -3 ],
+                      "color": [ 0.6, 0.48, 0.35 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "hover": {
+                "type": "image",
+                "texture": "textures/ui/learning_station/button_hover",
+                "controls": [
+                  {
+                    "text": {
+                      "type": "label",
+                      "font_type": "MinecraftTen",
+                      "text": "Craft Spell",
+                      "offset": [ 0, -3 ],
+                      "color": [ 0.1, 0.07, 0.01 ]
+                    }
+                  },
+                  {
+                    "hover@magic_learning_station.button_border_light": {
+                      "layer": 2,
+                      "size": [ 92, 22 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "pressed": {
+                "type": "image",
+                "texture": "textures/ui/learning_station/button_press",
+                "controls": [
+                  {
+                    "text": {
+                      "type": "label",
+                      "font_type": "MinecraftTen",
+                      "text": "Craft Spell",
+                      "offset": [ 0, -1 ],
+                      "color": [ 0.1, 0.07, 0.01 ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#content_label",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#content_label = 'craft')",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      },
+      {
+        "magic_type_button0@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/void_type_button",
+          "offset": [ -251, 86 ],
+          "$button_param": "void_type"
+        }
+      },
+      {
+        "magic_type_button1@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/wind_type_button",
+          "offset": [ -251, 65 ],
+          "$button_param": "wind_type"
+        }
+      },
+      {
+        "magic_type_button2@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/thunder_type_button",
+          "offset": [ -251, 44 ],
+          "$button_param": "thunder_type"
+        }
+      },
+      {
+        "magic_type_button3@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/light_type_button",
+          "offset": [ -251, 23 ],
+          "$button_param": "light_type"
+        }
+      },
+      {
+        "magic_type_button4@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/water_type_button",
+          "offset": [ -251, 2 ],
+          "$button_param": "water_type"
+        }
+      },
+      {
+        "magic_type_button5@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/ice_type_button",
+          "offset": [ -251, -19 ],
+          "$button_param": "ice_type"
+        }
+      },
+      {
+        "magic_type_button6@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/dark_type_button",
+          "offset": [ -251, -40 ],
+          "$button_param": "dark_type"
+        }
+      },
+      {
+        "magic_type_button7@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/nature_type_button",
+          "offset": [ -251, -61 ],
+          "$button_param": "nature_type"
+        }
+      },
+      {
+        "magic_type_button8@magic_learning_station.magic_type_button": {
+          "$button_image": "textures/ui/learning_station/fire_type_button",
+          "offset": [ -251, -82 ],
+          "$button_param": "fire_type"
+        }
+      }
+    ]
+  },
+
+  "scroll_craft_content": {
+    "type": "panel",
+    "size": [ 436, 194 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 5 ],
+    "controls": [
+      {
+        "common_panel@common.common_panel": {
+          "$dialog_background": "magic_learning_station.transparent"
+        }
+      },
+      {
+        "magic_scroll_panel@magic_learning_station.magic_scroll_panel": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -5, -5 ]
+        }
+      },
+      {
+        "magic_scroll_list_panel@magic_learning_station.magic_scroll_list_panel": {
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 20, -5 ]
+        }
+      },
+      {
+        "title": {
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "text": "Magic Learning Station",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 20, 5 ],
+          "color": [ 0.23, 0.23, 0.23 ]
+        }
+      },
+      {
+        "static_panel@magic_learning_station.static_panel": {}
+      }
+    ]
+  },
+
+  "menu_main_button": {
+    "type": "panel",
+    "size": [ 96, 128 ],
+    "controls": [
+      {
+        "button@common_buttons.light_text_button": {
+          "$pressed_button_name": "button.form_button_click",
+          "size": [ 64, 128 ],
+
+          "$default_button_texture": "textures/ui/blank",
+          "$hover_button_texture": "textures/ui/ribbon_bar_text_background_hover",
+          "$pressed_button_texture": "textures/ui/blank",
+          "$locked_button_texture": "textures/ui/blank",
+
+          "$button_text_binding_type": "collection",
+          "$button_text_grid_collection_name": "form_buttons",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      },
+      {
+        "image": {
+          "type": "image",
+          "layer": 2,
+          "size": [ 64, 128 ],
+          "bindings":[
+            {
+              "binding_name": "#form_button_texture",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_texture_file_system",
+              "binding_name_override": "#texture_file_system",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ((#texture = '') or (#texture = 'loading')))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

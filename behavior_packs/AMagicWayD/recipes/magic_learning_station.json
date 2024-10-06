@@ -1,0 +1,31 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:magic_learning_station"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			" X ",
+			"YZY",
+			"WWW"
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:book"
+			},
+			"Y": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Z": {
+				"item": "minecraft:wool"
+			},
+			"W": {
+				"item": "minecraft:wooden_slab"
+			}
+		},
+		"result": {
+			"item": "amw:magic_learning_station"
+		}
+	}
+}

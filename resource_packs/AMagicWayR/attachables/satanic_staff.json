@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "amw:satanic_staff",
+      "materials": {
+        "default": "entity_alphatest",
+        "second_layer": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/satanic_staff_base",
+        "second_layer": "textures/items/satanic_staff_crystal",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.item_hand",
+        "second_layer": "geometry.item_hand_second_layer"
+      },
+      "animations": {
+        "wield": "animation.item_hand.first_person",
+        "hover": "animation.item_hand.second_layer.hover",
+        "casting": "animation.item_hand.second_layer.casting"
+      },
+      "scripts": {
+        "animate": [
+          "hover",
+          {
+            "wield": "context.is_first_person"
+          },
+          {
+            "casting": "query.is_using_item"
+          }
+        ]
+      },
+      "render_controllers": [ "controller.render.item_default", "controller.render.second_layer" ]
+    }
+  }
+}

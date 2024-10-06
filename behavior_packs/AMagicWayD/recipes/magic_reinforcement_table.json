@@ -1,0 +1,28 @@
+{
+"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+		  "identifier": "amw:magic_reinforcement_table"
+		},
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			"XXX",
+			"YZY",
+			"YZY"
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:iron_ingot"
+			},
+			"Y": {
+				"item": "minecraft:gold_ingot"
+			},
+			"Z": {
+				"item": "minecraft:planks"
+			}
+		},
+		"result": {
+			"item": "amw:magic_reinforcement_table"
+		}
+	}
+}

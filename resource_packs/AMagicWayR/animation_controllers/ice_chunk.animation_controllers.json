@@ -1,0 +1,29 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.ice_chunk.move": {
+			"states": {
+				"default": {
+					"animations": ["start"],
+					"transitions": [
+						{"move": "query.all_animations_finished"},
+						{"slam": "query.variant == 1"}
+					],
+					"blend_transition": 0.1
+				},
+				"move": {
+					"animations": [
+						{"idle": "query.modified_move_speed + 0.1"}
+					],
+					"transitions": [
+						{"slam": "query.variant == 1"}
+					],
+					"blend_transition": 0.25
+				},
+				"slam": {
+					"animations": ["slam"]
+				}
+			}
+		}
+	}
+}

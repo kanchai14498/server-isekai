@@ -1,0 +1,60 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.dirt_wall",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"root_loc": [0, 51, 0]
+					}
+				},
+				{
+					"name": "wall_0",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 48, 16], "uv": [0, 0]}
+					],
+					"locators": {
+						"tail_0": [0, 0, 0],
+						"head_0": [0, 48, 0]
+					}
+				},
+				{
+					"name": "wall_1",
+					"parent": "root",
+					"pivot": [-16, 0, 0],
+					"cubes": [
+						{"origin": [-24, 0, -8], "size": [16, 48, 16], "uv": [0, 0]}
+					],
+					"locators": {
+						"head_1": [-16, 48, 0],
+						"tail_1": [-16, 0, 0]
+					}
+				},
+				{
+					"name": "wall_2",
+					"parent": "root",
+					"pivot": [16, 0, 0],
+					"cubes": [
+						{"origin": [8, 0, -8], "size": [16, 48, 16], "uv": [0, 0]}
+					],
+					"locators": {
+						"head_2": [16, 48, 0],
+						"tail_2": [16, 0, 0]
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "magic:spell_line_magic",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"curves": {
+			"variable.light_beam": {
+				"type": "bezier_chain",
+				"input": "v.particle_age",
+				"nodes": {
+					"0.0": {
+						"value": 0,
+						"slope": 2.25
+					},
+					"1.0": {
+						"value": 0,
+						"slope": -2.25
+					},
+					"0.4": {
+						"value": 1,
+						"slope": 0
+					},
+					"0.6": {
+						"value": 1,
+						"slope": 0
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.direction_script;variable.color_script;variable.properties_script;"
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "variable.properties_script.x*variable.direction_script.speed"
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": "variable.properties_script.direction_y"
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "variable.properties_script.y"
+			},
+			"minecraft:particle_motion_parametric": {
+				"relative_position": ["variable.particle_random_1*variable.direction_script.speed*variable.direction_script.direction_x", "variable.particle_random_1*variable.direction_script.speed*variable.direction_script.direction_y", "variable.particle_random_1*variable.direction_script.speed*variable.direction_script.direction_z"],
+				"rotation": "variable.particle_random_2*360"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.particle_random_3*0.1+0.1", "variable.particle_random_3*0.1+0.1"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"uv": ["math.floor(variable.particle_random_4*15)*8+8", 112],
+					"uv_size": [8, 8]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["variable.color_script.r", "variable.color_script.g", "variable.color_script.b", "variable.light_beam * variable.color_script.a"]
+			}
+		}
+	}
+}

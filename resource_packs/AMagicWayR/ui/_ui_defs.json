@@ -1,0 +1,12 @@
+{
+    "ui_defs": [
+        "ui/magic_reinforcement_table_screen.json",
+        "ui/magic_learning_station_screen.json",
+        "ui/magic_ui_util.json",
+        "ui/scrolls_item_ui.json",
+        "ui/spell_binding_table_screen.json",
+        "ui/magic_hud_screen.json",
+        "ui/a_magic_way_custom_panel.json",
+        "ui/fast_swap_scroll.json"
+    ]
+}

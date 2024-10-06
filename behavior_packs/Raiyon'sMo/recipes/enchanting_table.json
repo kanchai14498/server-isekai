@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "raiyon:enchantment_table"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " B ",
+      "D#D",
+      "###"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:book"
+      },
+      "#": {
+        "item": "minecraft:deepslate"
+      },
+      "D": {
+        "item": "minecraft:amethyst_shard"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "raiyon:enchantment_table"
+    }
+  }
+}

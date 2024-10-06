@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.magic_material": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "is_hurt_color": {
+        "r": 0.5,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.5
+      },
+      "on_fire_color": {
+        "r": 0.5,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.5
+      }
+    },
+    "controller.render.magic_material.choose_2": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.default", 
+            "Geometry.second_layer"
+          ]
+        }
+      },
+      "geometry": "Array.geos[variable.choose]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "is_hurt_color": {
+        "r": 0.5,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.5
+      },
+      "on_fire_color": {
+        "r": 0.5,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.5
+      }
+    }
+  }
+}

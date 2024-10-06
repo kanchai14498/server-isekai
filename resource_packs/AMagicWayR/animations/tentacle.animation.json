@@ -1,0 +1,171 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tentacle.attack": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"tentacle_0": {
+					"rotation": {
+						"0.0": [-22.5, 0, 0],
+						"0.1": [-5, 0, 0],
+						"0.15": [-17.5, 0, 0],
+						"0.25": [-32.5, 0, 0],
+						"0.4": [-5, 0, 0],
+						"0.5": [-35, 0, 0],
+						"0.55": [-45, 0, 0],
+						"0.7": [85, 0, 0]
+					},
+					"position": {
+						"0.0": [0, -30, -25],
+						"0.1": [0, -22, -13],
+						"0.15": [0, -14, -5],
+						"0.25": [0, -6, -2],
+						"0.35": [0, 0, 1]
+					}
+				},
+				"tentacle_1": {
+					"rotation": {
+						"0.0": [-47.5, 0, 0],
+						"0.15": [-55, 0, 0],
+						"0.25": [-10, 0, 0],
+						"0.4": [-2.5, 0, 0],
+						"0.55": [-12.5, 0, 0],
+						"0.7": [7.5, 0, 0]
+					}
+				},
+				"tentacle_2": {
+					"rotation": {
+						"0.0": [27.5, 0, 0],
+						"0.1": [-17.5, 0, 0],
+						"0.15": [42.5, 0, 0],
+						"0.35": [-17.5, 0, 0],
+						"0.5": [-27.5, 0, 0],
+						"0.7": [15, 0, 0]
+					}
+				},
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1": [-2.60386, 7.85873, -0.22776],
+						"0.25": [-6.02275, -4.97254, 0.52396],
+						"0.35": [-20.28356, 9.39129, -3.45118],
+						"0.4": [-14.02439, 9.01882, -5.72464],
+						"0.55": [-0.31096, 10.06638, -2.89148],
+						"0.7": [-12.5, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.15": [0, 0, 11.33],
+						"0.5": [0, 0, 17],
+						"0.6": [0, -3, 22]
+					}
+				}
+			}
+		},
+		"animation.tentacle.loop": {
+			"loop": true,
+			"bones": {
+				"tentacle_0": {
+					"rotation": ["math.sin(query.anim_time*128+451)*5", "-math.cos(query.anim_time*240-160)*5", "-math.cos(query.anim_time*164-555)*8"]
+				},
+				"tentacle_1": {
+					"rotation": ["-math.cos(query.anim_time*141+42)*10", "-math.sin(query.anim_time*131+321)*8", "-math.sin(query.anim_time*162-21)*7"]
+				},
+				"tentacle_2": {
+					"rotation": ["-math.cos(query.anim_time*120-156)*7", "math.sin(query.anim_time*242+154)*16", "math.cos(query.anim_time*240-56)*17"]
+				},
+				"root": {
+					"rotation": [0, "variable.random_rot", 0]
+				}
+			}
+		},
+		"animation.tentacle.stand_up": {
+			"animation_length": 1.5,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": {
+							"post": [0, -7.5, 10],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [-8.55115, -16.30821, 3.25505],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [-3.11153, 10.01952, 3.33839],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [0, -41, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [0, -27.75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [0, -11.42, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9167": {
+							"post": [0, -8.85, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.375": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"tentacle_1": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3333": {
+							"post": [2.5, 0, -5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.875": {
+							"post": [-10.03742, 4.92385, -5.87038],
+							"lerp_mode": "catmullrom"
+						},
+						"1.2083": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"tentacle_2": {
+					"rotation": {
+						"0.0": {
+							"post": [9.85108, -1.72794, 9.85108],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [-7.64892, 1.72794, -9.85108],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9583": {
+							"post": [2.21934, 14.23166, 9.08098],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	}
+}

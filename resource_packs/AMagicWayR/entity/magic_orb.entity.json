@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:magic_orb",
+			"materials": {
+				"default": "magic_entity_additive"
+			},
+			"textures": {
+				"fire": "textures/entity/magic/fire_orb",
+				"water": "textures/entity/magic/water_orb",
+				"void": "textures/entity/magic/void_orb",
+				"nature": "textures/entity/magic/nature_orb",
+				"thunder": "textures/entity/magic/thunder_orb",
+				"light": "textures/entity/magic/light_orb",
+				"wind": "textures/entity/magic/wind_orb",
+				"dark": "textures/entity/magic/dark_orb",
+				"ice": "textures/entity/magic/ice_orb"
+			},
+			"geometry": {
+				"default": "geometry.magic_orb"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				]
+			},
+			"animations": {
+				"idle": "animation.orb.cycle"
+			},
+			"particle_effects": {
+				"magic_orb_trails": "magic:magic_orb_trails"
+			},
+			"render_controllers": [ "controller.render.orb" ]
+		}
+	}
+}

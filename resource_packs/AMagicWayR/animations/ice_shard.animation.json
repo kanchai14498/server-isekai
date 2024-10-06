@@ -1,0 +1,131 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ice_shard.setup": {
+			"animation_length": 1,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [-90, "math.sin(query.anim_time*1600)*15", 0],
+						"0.5333": [17.5, "math.sin(query.anim_time*1600)*15", 0],
+						"0.6667": [-10, "math.sin(query.anim_time*1600)*15", 0],
+						"0.8333": [7.5, "math.sin(query.anim_time*1600)", 0],
+						"1.0": [0, 0, 0]
+					},
+					"position": ["math.sin(query.anim_time*1211)", "math.sin(query.anim_time*1321+23)", "math.sin(query.anim_time*1000+2333)"],
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.6": [0.7273, 0.7273, 0.7273],
+						"0.7333": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.ice_shard.loop": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.0417": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.0833": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.125": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.1667": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.2083": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.25": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.2917": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.3333": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.375": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.4167": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.4583": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.5": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.5417": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.5833": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.625": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.6667": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.7083": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.75": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.7917": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.8333": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.875": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.9167": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"0.9583": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				},
+				"1.0": {
+					"effect": "snow_magic_effect",
+					"locator": "back"
+				}
+			}
+		}
+	}
+}

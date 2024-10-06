@@ -1,0 +1,157 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:summon_placeholder",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"became_wolf": {
+				"minecraft:transformation": {
+				  "into": "minecraft:wolf<minecraft:on_tame>",
+				  "keep_owner": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_bees_army": {
+				"minecraft:transformation": {
+				  "into": "amw:bees_army",
+				  "keep_owner": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_magic_skeleton": {
+				"minecraft:transformation": {
+				  "into": "amw:magic_skeleton",
+				  "keep_owner": true,
+				  "preserve_equipment": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_ice_sculpture": {
+				"minecraft:transformation": {
+				  "into": "amw:ice_sculpture",
+				  "keep_owner": true,
+				  "preserve_equipment": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_magic_zombie": {
+				"minecraft:transformation": {
+				  "into": "amw:magic_zombie",
+				  "keep_owner": true,
+				  "preserve_equipment": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_magic_vex": {
+				"minecraft:transformation": {
+				  "into": "amw:magic_vex",
+				  "keep_owner": true,
+				  "preserve_equipment": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			},
+			"became_magic_iron_golem": {
+				"minecraft:transformation": {
+				  "into": "amw:magic_iron_golem",
+				  "keep_owner": true,
+				  "preserve_equipment": true,
+				  "delay": {
+					"value": 0.05
+				  }
+				}
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 0
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"stick_in_ground": {}
+				},
+				"anchor": 1,
+				"power": 0.0,
+				"gravity": 0.0
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+
+		"events": {
+			"to_wolf": {
+				"add": {
+					"component_groups": [ "became_wolf" ]
+				}
+			},
+			"to_bees_army": {
+				"add": {
+					"component_groups": [ "became_bees_army" ]
+				}
+			},
+			"to_magic_skeleton": {
+				"add": {
+					"component_groups": [ "became_magic_skeleton" ]
+				}
+			},
+			"to_ice_sculpture": {
+				"add": {
+					"component_groups": [ "became_ice_sculpture" ]
+				}
+			},
+			"to_magic_zombie": {
+				"add": {
+					"component_groups": [ "became_magic_zombie" ]
+				}
+			},
+			"to_magic_vex": {
+				"add": {
+					"component_groups": [ "became_magic_vex" ]
+				}
+			},
+			"to_magic_iron_golem": {
+				"add": {
+					"component_groups": [ "became_magic_iron_golem" ]
+				}
+			}
+		}
+	}
+}

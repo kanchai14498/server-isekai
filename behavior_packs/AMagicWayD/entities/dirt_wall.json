@@ -1,0 +1,90 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "amw:dirt_wall",
+            "runtime_identifier": "minecraft:shield",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+			
+		"component_groups": {
+			"set_despawn": {
+				"minecraft:instant_despawn":{}
+			},
+			"single_chunk": {
+				"minecraft:is_charged": {}
+			}
+		},
+			
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 1,
+						"height": 3,
+						"pivot": [0, 1.5, 0]
+					},
+					{
+						"width": 1,
+						"height": 3,
+						"pivot": [1, 1.5, 0]
+					},
+					{
+						"width": 1,
+						"height": 3,
+						"pivot": [-1, 1.5, 0]
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20,
+				"min": 20
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:fire_immune": {
+			},
+			"minecraft:type_family": {
+				"family": [ "inanimate", "magic" ]
+			},
+			"minecraft:behavior.float": {
+			  	"priority": 0
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:on_death": {
+				"event": "despawn"
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {},
+			"despawn": {
+				"add": {
+					"component_groups": [ "set_despawn" ]
+				}
+			},
+			"single_chunk": {
+			  "add": {
+				"component_groups": [
+				  "single_chunk"
+				]
+			  }
+			}
+		}
+	}
+}

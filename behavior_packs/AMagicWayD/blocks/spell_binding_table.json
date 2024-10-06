@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:block": {
+		"description": {
+			"identifier": "amw:spell_binding_table",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:light_dampening": 1,
+			"minecraft:geometry": "geometry.spell_binding_table",
+			"minecraft:material_instances": {
+				"up": {
+					"texture": "spell_binding_table_top",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "crying_obsidian",
+					"render_method": "opaque"
+				},
+				"*": {
+					"texture": "spell_binding_table_side",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 13, 16]
+			},
+			"minecraft:selection_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 13, 16]
+			},
+            "minecraft:custom_components": ["amw:spell_binding_table"]
+		}
+	}
+}

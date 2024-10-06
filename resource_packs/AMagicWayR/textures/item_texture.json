@@ -1,0 +1,150 @@
+{
+	"resource_pack_name": "terrain",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"empty": {
+			"textures": "textures/ui/blank"
+		},
+		"spellsword": {
+			"textures": "textures/items/spellsword"
+		},
+		"training_spellsword": {
+			"textures": "textures/items/training_spellsword"
+		},
+		"wand": {
+			"textures": "textures/items/wand"
+		},
+		"amethyst_wand": {
+			"textures": "textures/items/amethyst_wand"
+		},
+		"lapis_lazuli_wand": {
+			"textures": "textures/items/lapis_lazuli_wand"
+		},
+		"angelic_wand": {
+			"textures": "textures/items/angelic_wand"
+		},
+		"holy_staff": {
+			"textures": "textures/items/holy_staff"
+		},
+		"staff": {
+			"textures": "textures/items/staff"
+		},
+		"satanic_staff": {
+			"textures": "textures/items/satanic_staff"
+		},
+		"redstone_staff": {
+			"textures": "textures/items/redstone_staff"
+		},
+		"amethyst_staff": {
+			"textures": "textures/items/amethyst_staff"
+		},
+		"scroll": {
+			"textures": "textures/items/scroll"
+		},
+		"trapped_soul_fragment": {
+			"textures": "textures/items/trapped_soul_fragment"
+		},
+		"spell_paper": {
+			"textures": "textures/items/spell_paper"
+		},
+
+		"basic_spell_book": {
+			"textures": "textures/items/spell_book/basic_spell_book"
+		},
+		"grimore": {
+			"textures": "textures/items/spell_book/grimore"
+		},
+		"sacred_book": {
+			"textures": "textures/items/spell_book/sacred_book"
+		},
+		"manuscript": {
+			"textures": "textures/items/spell_book/manuscript"
+		},
+		"theory_of_darkness": {
+			"textures": "textures/items/spell_book/theory_of_darkness"
+		},
+		"book_of_dharma": {
+			"textures": "textures/items/spell_book/book_of_dharma"
+		},
+		"book_of_witchcraft": {
+			"textures": "textures/items/spell_book/book_of_witchcraft"
+		},
+		"summoner_tale": {
+			"textures": "textures/items/spell_book/summoner_tale"
+		},
+		"wizard_knowledge_volume_1": {
+			"textures": "textures/items/spell_book/wizard_knowledge_volume_1"
+		},
+		"pyromancer_spell_book": {
+			"textures": "textures/items/spell_book/pyromancer_spell_book"
+		},
+		"magic_research_book": {
+			"textures": "textures/items/spell_book/magic_research_book"
+		},
+		"holy_book": {
+			"textures": "textures/items/spell_book/holy_book"
+		},
+		"alchemist_journal_part_1": {
+			"textures": "textures/items/spell_book/alchemist_journal_part_1"
+		},
+		"alchemist_journal_part_2": {
+			"textures": "textures/items/spell_book/alchemist_journal_part_2"
+		},
+		"wizard_knowledge_volume_2": {
+			"textures": "textures/items/spell_book/wizard_knowledge_volume_2"
+		},
+		"wicked_book": {
+			"textures": "textures/items/spell_book/wicked_book"
+		},
+		"sorcerer_spell_book": {
+			"textures": "textures/items/spell_book/sorcerer_spell_book"
+		},
+		"naturalist_guidance": {
+			"textures": "textures/items/spell_book/naturalist_guidance"
+		},
+		"zeus_archive_book": {
+			"textures": "textures/items/spell_book/zeus_archive_book"
+		},
+
+		"magic_essence": {
+			"textures": "textures/items/magic_essence"
+		},
+		"fire_magic_essence": {
+			"textures": "textures/items/fire_magic_essence"
+		},
+		"nature_magic_essence": {
+			"textures": "textures/items/nature_magic_essence"
+		},
+		"void_magic_essence": {
+			"textures": "textures/items/void_magic_essence"
+		},
+		"wind_magic_essence": {
+			"textures": "textures/items/wind_magic_essence"
+		},
+		"thunder_magic_essence": {
+			"textures": "textures/items/thunder_magic_essence"
+		},
+		"light_magic_essence": {
+			"textures": "textures/items/light_magic_essence"
+		},
+		"water_magic_essence": {
+			"textures": "textures/items/water_magic_essence"
+		},
+		"ice_magic_essence": {
+			"textures": "textures/items/ice_magic_essence"
+		},
+		"dark_magic_essence": {
+			"textures": "textures/items/dark_magic_essence"
+		},
+
+		"electro_charged_bone": {
+			"textures": "textures/items/electro_charged_bone"
+		},
+		"frosted_bone": {
+			"textures": "textures/items/frosted_bone"
+		},
+		"infused_electro_bottle": {
+			"textures": "textures/items/infused_electro_bottle"
+		}
+	}
+}

@@ -1,0 +1,38 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.19.10",
+	"animation_controllers": {
+		"controller.animation.book": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"book_open": "query.is_sheared"
+						},
+						{
+							"paper": "query.is_sheared"
+						}
+					],
+					"transitions": [
+						{
+							"closed": "!query.is_sheared"
+						}
+					]
+				},
+				"closed": {
+					"animations": [
+						{
+							"book_closed": "!query.is_sheared"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_sheared"
+						}
+					]
+				}
+			},
+			"initial_state": "default"
+		}
+	}
+}

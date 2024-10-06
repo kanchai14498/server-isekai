@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:tornado",
+			"materials": {
+				"default": "breeze",
+        		"breeze_wind": "breeze_wind"
+			},	
+			"textures": {
+				"default": "textures/entity/breeze/breeze",
+				"breeze_wind": "textures/entity/breeze/breeze_wind"
+			},
+			"geometry": {
+				"default": "geometry.breeze",
+				"breeze_wind_top": "geometry.breeze_wind_top",
+				"breeze_wind_mid": "geometry.breeze_wind_mid",
+				"breeze_wind_bottom": "geometry.breeze_wind_bottom"
+			},
+			"scripts": {
+				"should_update_effects_offscreen": "1.0"
+			},
+			"render_controllers": [
+				"controller.render.breeze_wind_top",
+				"controller.render.breeze_wind_mid",
+				"controller.render.breeze_wind_bottom"
+			]
+		}
+	}
+}

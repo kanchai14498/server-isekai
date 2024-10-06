@@ -1,0 +1,45 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.fire_obelisk",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"head": [0, 32, 0],
+						"tail": [0, 2, 0]
+					}
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 24, 16], "uv": [0, 0]},
+						{"origin": [-7, 2, -7], "size": [14, 29, 14], "uv": [0, 40]}
+					],
+					"locators": {
+						"fire_loc": [0, 22, 0]
+					}
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-8, 18, -8], "size": [16, 14, 16], "inflate": 0.01, "uv": [48, 24]}
+					]
+				}
+			]
+		}
+	]
+}

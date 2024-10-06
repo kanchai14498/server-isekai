@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "amw:mutation_vines",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/magic/mutation_vines"
+			},
+			"geometry": {
+				"default": "geometry.mutation_vines"
+			},
+			"scripts": {
+				"animate": [ "start", "random" ],
+				"initialize": [
+					"variable.random_rot = Math.random_integer(0, 360);"
+				]
+			},
+			"animations": {
+				"start": "animation.mutation_vines.start",
+				"random": "animation.magic.random_rotation"
+			},
+			"render_controllers": [ "controller.render.default" ]
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.oberon.not_walk": {
+      "initial_state": "default",
+      "states": {
+
+        "default": {
+          "transitions": [
+            { "not_walk_sequence": "q.modified_move_speed <= 0.4 && q.life_time - v.state_time > 20 && q.property('cso:state') != 'dying'" }
+          ],
+          "on_entry": [
+            "v.state_time = q.life_time;"
+          ]
+        },
+
+        "not_walk_sequence": {
+          "transitions": [
+            { "not_walk_sequence.end": "1.0" }
+          ],
+          "on_entry": [
+            "v.state_time = q.life_time;",
+            "/summon cso:oberon_fix_afk"
+          ]
+        },
+        "not_walk_sequence.end": {
+          "transitions": [ { "default": "1.0" } ],
+          "on_entry": [
+            "v.state_time = q.life_time;"
+          ]
+        }
+
+      }
+    }
+
+  }
+}

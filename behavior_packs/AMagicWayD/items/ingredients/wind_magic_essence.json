@@ -1,0 +1,17 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:item": {
+		"description": {
+			"identifier": "amw:wind_magic_essence",
+			"menu_category": { 
+			  	"category": "items"
+			} 
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "wind_magic_essence"
+			},
+            "minecraft:max_stack_size":  16
+		}
+	}
+}

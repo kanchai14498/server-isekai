@@ -1,0 +1,24 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Isekai Systems",
+		"description": "Isekai Systems Behavior Pack",
+		"uuid": "475078b7-a9f1-533b-2d20-988cd7edac85",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 20, 80]
+	},
+	"modules": [
+		{
+			"description": "Behavior",
+			"version": [1, 0, 0],
+			"uuid": "a48cf39a-1291-bc93-7c7d-c827a4f2c19c",
+			"type": "data"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "6c0af0e0-386d-cbca-0dab-2509b500ccfb",
+			"version": [1, 0, 0]
+		}
+	]
+}

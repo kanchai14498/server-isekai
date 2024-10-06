@@ -1,0 +1,39 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:block": {
+		"description": {
+			"identifier": "amw:magic_learning_station",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:light_dampening": 1,
+			"minecraft:material_instances": {
+				"cloth": {
+					"texture": "magic_learning_station_cloth",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false
+				},
+				"*": {
+					"texture": "magic_learning_station_plank",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 14, 16]
+			},
+			"minecraft:geometry": "geometry.magic_learning_station",
+			"minecraft:selection_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 14.1, 16]
+			},
+            "minecraft:custom_components": ["amw:magic_learning_station"]
+		}
+	}
+}

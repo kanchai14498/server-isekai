@@ -1,0 +1,44 @@
+//bridge-file-version: #27
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "raiyon:enchant_entity",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/test",
+				"powered": "textures/entity/enchanting_table_book_powered"
+			},
+			"geometry": {
+				"default": "geometry.book"
+			},
+			"render_controllers": [
+				"controller.render.book"
+			],
+			"scripts": {
+				"animate": [
+				"book_controller",
+				"loop"
+				]
+			
+			},
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 28
+			},
+			"animations": {
+				"loop": "animation.book.loop",
+				"book_controller": "controller.animation.book",
+				"book_open": "animation.book.open",
+				"paper": "animation.book.paper",
+				"book_closed": "animation.book.close"
+			},
+			"particle_effects": {
+				"enchant": "raiyon:enchanting_table_particle"
+			}
+		}
+	}
+}

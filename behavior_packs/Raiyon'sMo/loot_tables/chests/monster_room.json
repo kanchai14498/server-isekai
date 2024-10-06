@@ -1,0 +1,411 @@
+{
+  "pools": [
+    {
+		
+    "conditions": [
+        {
+            "condition": "random_chance",
+            "chance": 0.42
+        }
+    ],
+    "rolls": {
+        "min": 1,
+        "max": 2
+    },
+   	"entries": [
+				{
+					"type": "item",
+					"name": "book:sweeping_edge_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "book:sweeping_edge_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "book:sweeping_edge_iii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "book:soul_fire_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "book:soul_fire_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "book:wind_charge_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:wind_charge_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:deep_breaker_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:deep_breaker_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:fire_charge",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:glowing_aura_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:glowing_aura_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:vitality_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:vitality_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:vitality_iii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:vitality_iv",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:vitality_v",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:smelting_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:smelting_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:spikes_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:spikes_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:double_jump_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				},
+        {
+					"type": "item",
+					"name": "book:double_jump_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				}, {
+					"type": "item",
+					"name": "book:boomshot_i",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				}, {
+					"type": "item",
+					"name": "book:boomshot_ii",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				}
+			]
+		},
+
+
+
+
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:redstone",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bread",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:wheat",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gunpowder",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:string",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:name_tag",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bucket",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmoriron",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmorgold",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

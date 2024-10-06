@@ -1,0 +1,64 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "By Raiyon",
+		"name": "Raiyon's More EnchantmentsV1.4 1.21+",
+		"uuid": "94a8ab24-2cf3-434c-9f76-bf9c06b0a635",
+		"version": [
+			1,
+			4,
+			0
+		],
+		"min_engine_version": [
+			1,
+			20,
+			30
+		]
+	},
+	"modules": [
+		{
+			"description": "awdawdawdawdawdawdawd",
+			"type": "script",
+			"language": "javascript",
+			"uuid": "d76e3ecc-194a-4384-88ed-9f774ac127ed",
+			"version": [
+				1,
+				4,
+				0
+			],
+			"entry": "scripts/gametests/RayEnchantmentsMain.js"
+		},
+		{
+			"type": "data",
+			"uuid": "8407824b-0414-4d10-b729-1e08dd9adb69",
+			"version": [
+				1,
+				4,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "b016ee64-0c93-4fe6-8ae2-4e719a5e74d8",
+			"version": [
+				1,
+				4,
+				0
+			]
+		},
+		{
+		
+			"module_name": "@minecraft/server",
+			"version": "1.11.0"
+		}
+	],
+	"metadata": {
+		"generated_with": {
+			"bridge": [
+				"1.8.3",
+				"1.8.5"
+			]
+		}
+	}
+}

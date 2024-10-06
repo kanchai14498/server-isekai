@@ -1,0 +1,12 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fighting_spirit_counter": {
+			"loop": true,
+			"animation_length": 5,
+			"timeline": {
+				"0.0": "/function fighting_spirit/buff"
+			}
+		}
+	}
+}

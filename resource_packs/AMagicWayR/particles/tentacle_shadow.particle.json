@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "magic:tentacle_shadow",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particles/tentacle_shadow"
+			}
+		},
+		"curves": {
+			"variable.time": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0, 1]
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.duration;"
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 0.5
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [0, 1, 0]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "(0.5 + variable.particle_random_3 * 0.5) * variable.duration"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["1 * (variable.particle_random_1 > 0.5 ? -1 : 1)", 1],
+				"facing_camera_mode": "lookat_y",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 224,
+					"flipbook": {
+						"base_UV": [0, 0],
+						"size_UV": [32, 32],
+						"step_UV": [0, 32],
+						"frames_per_second": 10,
+						"max_frame": 7,
+						"loop": true
+					}
+				}
+			}
+		}
+	}
+}
