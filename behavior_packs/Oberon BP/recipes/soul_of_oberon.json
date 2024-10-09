@@ -1,0 +1,31 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "cso:oberon_asteroid_spawn_egg"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      "XYX",
+      "AZA",
+      " A "
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:pointed_dripstone"
+      },
+      "Y": {
+        "item": "minecraft:skull"
+      },
+      "Z": {
+        "item": "dk:soul_gem"
+      },
+      "A": {
+        "item": "dk:human_flesh"
+      }
+    },
+    "result": {
+      "item": "cso:oberon_asteroid_spawn_egg"
+    }
+  }
+}

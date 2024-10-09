@@ -1,0 +1,11 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"asteroid_egg": {
+			"textures": [
+				"textures/spawn_egg/soul_of_oberon"
+			]
+		}
+	}
+}

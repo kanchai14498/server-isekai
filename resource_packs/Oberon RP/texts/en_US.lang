@@ -4,3 +4,4 @@ entity.cso:obeball.name=Oberon's Balls
 entity.cso:oberon_asteroid_explode.name=asteroid explosion
 
 item.spawn_egg.entity.cso:oberon.name=Spawn Oberon
+item.spawn_egg.entity.cso:oberon_asteroid.name=Soul of Oberon

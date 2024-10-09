@@ -30,6 +30,9 @@
 			"geometry": {
 				"default": "geometry.oberon_asteroid"
 			},
+            "spawn_egg": {
+                "texture": "asteroid_egg"
+      },			
 			"render_controllers": [
 				"controller.render.iron_golem"
 			]
